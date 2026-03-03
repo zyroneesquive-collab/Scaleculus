@@ -2,13 +2,25 @@
 import Topics from "../data/topics.json";
 
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import HorSection2 from "../components/Hor-Section2.astro";
 
 import ColorPalette from "../color_p/color_style1.json";
 
 import "../styles/style1.css";
 
 const {title = "Scaleculus! | Calculus Learning Platform"} = Astro.props;
+
+const numComets = 5;
+
+const comets = Array.from({ length: numComets }, () => ({
+  top: `-20vh`,     
+  left: `${Math.random() * 60 - 50}vw`,
+  duration: `${(3 + Math.random() * 2).toFixed(4)}s`, 
+  delay: `${(1 + Math.random() * 8).toFixed(4)}s`         
+}));
+
+const mathIcons = ["∑","∫","∆","∂","∞","√","θ","≈","∇","dx"];
+
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -20,36 +32,54 @@ const {title = "Scaleculus! | Calculus Learning Platform"} = Astro.props;
 	    <title>{title}</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fugaz+One&family=Press+Start+2P&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fugaz+One&family=Press+Start+2P&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
 
     </head>
     
 	<body>
-        <div id="Stars-Container1"></div>
         <img class = "Background" src ="/Scaleculus/background/gradient_sky.jpg" alt="">
-        <Header></Header>
-       <slot />
 
-       
+        <div class="Stars">
+        {Array.from({ length: 50 }).map((_, i) => (
+        <div
+        class="Star"
+        style={`
+        top: ${Math.random() * 100}%;
+        left: ${Math.random() * 100}%;
+        font-size: ${Math.random() * 24 + 16}px;
+        `}
+        >
+        {mathIcons[Math.floor(Math.random() * mathIcons.length)]}
+        </div>
+    ))}
+    </div>
+
+      <Header></Header>
+      <slot />
+      <HorSection2 title = "Made with ❤ from Scalable!" direction = "left">
+        lol
+      </HorSection2>
 	</body>
 </html>
 
+<div class="Comets-Container">
+    {comets.map((comet, i) => {
+    return (
+      <div
+        class={`Comet comet${i}`}
+        style={`top: ${comet.top}; left: ${comet.left}; animation-duration: ${comet.duration}; animation-delay: ${comet.delay};`}
+      ></div>
+    )
+    })}
+</div>
+
 <style>
     body {
-        position: relative;
+        background: var(--shadow-grey);
+        min-height: 5000vh;
     }
-
-    #Stars-Container1 {
-    position: fixed;   /* stays in place on the screen */
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none; /* so clicks go through */
-    z-index: 1;           /* above background but below header/content */
-}
 
     .Background {
         position: fixed;
@@ -59,48 +89,98 @@ const {title = "Scaleculus! | Calculus Learning Platform"} = Astro.props;
         background-size: cover;
         background-position: center;
 
-        filter: blur(0px) hue-rotate(30deg) brightness(60%);
+        color: rgb(255,255,255);
+
+        filter: blur(0px) hue-rotate(30deg) brightness(50%);
         z-index: 0;
         
     }
 
-    .star {
-        position: absolute;
-        background: white;
-        border-radius: 50%;
-        opacity: 1;
-        z-index: 4;
-        animation: twinkle 2s infinite ease-in-out;
+    .Comet {
+    position: absolute;
+    width: 30rem;
+    height: 5px;
+    background-color: rgb(254, 255, 246);         
+    transform: rotate(45deg);
+
+    filter: blur(3px);
+
+    opacity: 0.5;  
+    border-radius: 100%;
+    animation: moveComet 2s ease-in-out infinite;
+    }   
+    
+    .Comets-Container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
     }
 
-    @keyframes twinkle {
-        0%, 100% { opacity: 0.8; }
-        50% { opacity: 0.3; }
+
+   @keyframes moveComet {
+    0% {
+        transform: translate(0px, 0px) rotate(45deg);
+    }
+    100% {
+        transform: translate(1800px, 1600px) rotate(50deg);
+    }
+    }
+
+    .Stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+
+    user-select: none;
+
+    z-index: 0;
+    }
+
+    .Star {
+    position: absolute;
+    color: white;
+    text-shadow: 0 0 6px rgba(255,255,255,0.7), 0 0 12px rgba(255,255,255,0.5);
+    will-change: transform;
+    pointer-events: none;
     }
 
 </style>    
-<!--
-<script is:inline>
-function createStars() {
-  const numberOfStars = 100;
-  const container = document.getElementById("Stars-Container1");
-  if (!container) return;
 
-  for (let i = 0; i < numberOfStars; i++) {
-    const star = document.createElement('div');
-    star.classList.add('star');
+<script>
+const stars = document.querySelectorAll<HTMLElement>(".Star");
+const viewportHeight = window.innerHeight;
 
-    const size = Math.random() * 7 + 1; // px, small stars
-    star.style.width = `${size}px`;
-    star.style.height = `${size}px`;
-    star.style.left = `${Math.random() * 100}%`;
-    star.style.top = `${Math.random() * 100}%`;
-    star.style.animationDuration = `${Math.random() * 2 + 1}s`;
+// Store original positions
+stars.forEach((star) => {
+  star.dataset.origTop = star.offsetTop.toString();
+});
 
-    container.appendChild(star);
-  }
+let ticking = false;
+
+function updateStars() {
+  const scrollY = window.scrollY;
+
+  stars.forEach((star, i) => {
+    const speed = 0.1 + (i % 5) * 0.05;
+    const origTop = parseFloat(star.dataset.origTop || "0");
+
+    // Move star up
+    let newY = (origTop - scrollY * speed) % (viewportHeight + 50);
+
+    // Wrap star back into view if it goes above
+    if (newY < -50) newY += viewportHeight + 50;
+
+    star.style.transform = `translate3d(0, ${newY}px, 0)`;
+  });
+
+  ticking = false;
 }
 
-createStars();
+window.addEventListener("scroll", () => {
+  if (!ticking) {
+    requestAnimationFrame(updateStars);
+    ticking = true;
+  }
+});
 </script>
--->

@@ -1,0 +1,144 @@
+---
+const {direction, title, fontsize1, fontsize2, justifycontent} = Astro.props;
+---
+
+<main class = "Info_Section" style={`
+    --direction: ${direction};
+    --fontsize1: ${fontsize1};
+    --fontsize2: ${fontsize2};
+    --justifycontent: ${justifycontent};
+`}>
+    <section class = "Info-Con">
+        <header class="Title-Con">
+            <img src="/Scaleculus/icons/arrow-right.png" alt="arrow icon" class = "Title-Icon" />
+            <span class="Title-Text">{title}</span>
+        </header>
+
+        <div class="Line"></div>
+
+        <section class="Info-Text">
+            <slot />
+        </section>
+    </section> 
+</main>
+
+<style>
+    :root {
+    --wisteria: rgb(190, 173, 220);
+    --shadow-grey: rgb(20, 21, 39);
+    --petal-frost: #F7D3EBff;
+    --thistle: #D7BCE4ff;
+    --wisteria-2: #C493DAff;
+    --amethyst-smoke: #C18EC7ff;
+    --snow: #F8EEEDff;
+    }
+
+    
+    .Info_Section {
+        background-color: rgba(20, 21, 39, 0.4); 
+        width: 100vw;
+        min-height: 10rem;
+        
+        position: relative;
+        overflow: auto;
+
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(5px); 
+
+        border-bottom: 0.1rem solid var(--wisteria-2);
+        border-top: 0.1rem solid var(--wisteria-2);
+
+        box-shadow: 0rem 0rem 1rem 0.1rem var(--wisteria-2);
+        padding: 1rem;
+
+        margin: 5rem 0rem 10rem;
+        color: var(--snow);
+        z-index: 1;
+    }
+
+    .Info-Con {
+        position: relative;
+
+        padding: 1rem;
+        text-align: var(--direction);
+        
+        white-space: normal;          
+        overflow-wrap: break-word;   
+        word-break: break-word;       
+
+        z-index: 1;
+    }
+
+    .Title-Icon {
+        width: 1.5vw;
+        height: auto;
+        filter: invert(1) drop-shadow(4px 4px 8px rgb(190, 173, 220));
+    }
+
+    .Title-Con {
+        display: flex;
+        align-items: center;  
+        justify-content: var(--justifycontent);
+        min-height: 5vh;
+    }
+
+    .Title-Text {
+        position: relative;   
+        gap: 0.5rem; 
+
+        color: var(--snow);
+        font-family: "Quicksand", sans-serif;
+        font-size: var(--fontsize1);
+        font-weight: 1000;
+
+        margin-left: 1rem;
+        
+        text-shadow: 0 0 5px rgba(190, 173, 220, 0.6), 
+                    0 0 15px rgba(193, 142, 199, 0.4);
+
+        z-index: 1;            
+    }
+
+    .Line {
+        position: relative;
+
+        color: var(--snow);
+
+        width: 100vw;
+        height: 0.5vh;
+        
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2rem;
+        box-shadow: 0rem 0rem 0.5rem 0.05rem var(--snow);
+        background-color: var(--snow);   
+
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        opacity: 0.8;  
+        z-index: 1;
+    }
+
+    .Info-Text {
+        position: relative;
+
+        color: var(--snow);
+        font-family: "Quicksand", sans-serif;
+        font-weight: 500;
+        font-size: var(--fontsize2);
+
+        padding: 1rem;
+        margin: 1vw;
+        
+        border-left: 0.5rem solid var(--snow);
+        border-right: 0.5rem solid var(--snow);
+
+        background: rgba(242, 214, 255, 0.089);
+        border-radius: 0.2rem;
+
+    }
+
+    
+
+</style>

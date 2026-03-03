@@ -7,15 +7,18 @@ const {direction, title} = Astro.props;
     --direction: ${direction};
 `}>
     <img class = "Info_bg" src ="/Scaleculus/background/iso-republic-milky-way-detail.jpg" alt="">
-
-    
-    <section class = "Info">
-        <header>
+    <section class = "Info-Con">
+        <header class="Title-Con">
             <img src="/Scaleculus/icons/arrow-right.png" alt="arrow icon" class = "Title-Icon" />
             <span class="Title-Text">{title}</span>
         </header>
 
-        <slot />
+        <div class="Line"></div>
+
+        <section class="Info-Text">
+            <slot />
+        </section>
+        
     </section>
 </main>
 
@@ -31,26 +34,29 @@ const {direction, title} = Astro.props;
     }
 
     .Info_Section{
-
         background: var(--shadow-grey);
         
         position: relative;
         overflow: auto;
 
-        border: 0.5rem solid var(--petal-frost);
+        border-bottom: 0.5rem solid var(--petal-frost);
+        border-right: 0.5rem solid var(--petal-frost);
         border-radius: 0.2rem;
 
-        height: 30rem;
+        min-height: 30rem;
         width: 15rem;
 
         margin: 1rem;
 
         box-shadow: 0 0 0.5rem 0.1rem var(--petal-frost);
-        transition: box-shadow 0.5s
+        z-index: 1;
+        transition: all 0.5s ease-in-out
     }
 
     .Info_Section:hover{
         box-shadow: 0 0 0.9rem 0.5rem var(--petal-frost);
+        text-shadow: 0 0 15px rgba(190, 173, 220, 0.6), 
+                    0 0 30px rgba(193, 142, 199, 0.4);
     }
 
     .Info_bg {
@@ -61,8 +67,8 @@ const {direction, title} = Astro.props;
         opacity: 0.5;
 
         object-fit: cover;
-
-        filter: blur(3px);
+        background: var(--shadow-grey);
+        filter: blur(3px) hue-rotate(60deg);
 
         -webkit-mask-image: linear-gradient(to top, black 75%, transparent 50%);
         mask-image: linear-gradient(to top, black 5%, transparent 75%);
@@ -70,10 +76,36 @@ const {direction, title} = Astro.props;
         z-index: 1;
     }   
 
-    header {
+    .Line {
         position: relative;
-        display: flex;
-        align-items: center;        
+
+        color: var(--snow);
+
+        width: 8vw;
+        height: 0.5vh;
+        
+        left: 50%;
+        transform: translateX(-50%);
+
+        border-radius: 2rem;
+        box-shadow: 0rem 0rem 0.5rem 0.05rem var(--snow);
+        background-color: var(--snow);   
+
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+
+        opacity: 0.8;  
+        z-index: 1;
+    }
+
+    .Title-Icon {
+        width: 1vw;
+        height: auto;
+        filter: invert(1);
+    }
+
+    .Title-Text {
+        position: relative;   
         gap: 0.5rem; 
 
         color: var(--snow);
@@ -83,23 +115,26 @@ const {direction, title} = Astro.props;
 
         text-align: var(--direction);
 
-        margin-bottom: 1rem; 
+        margin-left: 1rem;
 
         z-index: 1;
     }
-    
-    .Title-Icon {
-        width: 1.2rem;
-        filter: invert(1); 
+
+    .Title-Con {
+        display: flex;
+        align-items: center;  
+        min-height: 15vh;
     }
 
-    .Info {
+    .Info-Con {
         position: relative;
+
+        text-align: left;
 
         color: var(--snow);
         font-family: "Quicksand", sans-serif;
         font-weight: 500;
-        font-size: 1rem;
+        font-size: 1vw;
 
         padding: 1rem;
         text-align: var(--direction);
@@ -109,6 +144,18 @@ const {direction, title} = Astro.props;
         word-break: break-word;       
 
         z-index: 1;
+    }
+
+    .Info-Text {
+        position: relative;
+        color: var(--snow);
+        font-family: "Quicksand", sans-serif;
+        font-weight: 500;
+        font-size: 1.25rem;
+
+        padding: 0;
+        text-align: var(--direction);
+
     }
 
     

@@ -1,12 +1,4 @@
 ---
-const numComets = 5;
-
-const comets = Array.from({ length: numComets }, () => ({
-  top: `-20vh`,     
-  left: `${Math.random() * 60 - 50}vw`,
-  duration: `${(3 + Math.random() * 2).toFixed(4)}s`, 
-  delay: `${(1 + Math.random() * 8).toFixed(4)}s`         
-}));
 
 ---
 
@@ -23,12 +15,12 @@ const comets = Array.from({ length: numComets }, () => ({
         <div class="Design-Wrapper">
             <div id = "Design-Container">
             <img id = "Mascot" src = "/Scaleculus/logo/Mascot.png">
-            <img class = "Header-Design" src = "/Scaleculus/logo/SubLogo.png" style="top: 35vh; left: 70vw; filter:blur(1px); width:70vh; height:auto;">
+            <img class = "Header-Design" src = "/Scaleculus/logo/SubLogo.png" style="top: 35vh; left: 70vw; width:70vh; height:auto;">
             </div>
         </div>
         
        <div class = "Line"></div>
-       
+       <section id = "Bottom-Start">Scroll Down To ▼▼▼ Begin ▼▼▼</section>
     </header>
     <div id="Header-Spacer"></div>
 </main>
@@ -38,17 +30,6 @@ const comets = Array.from({ length: numComets }, () => ({
     <div class="Star" style="top: 50vh; left: 5vw; font-size: 20vw;">✧</div>
     <div class="Star" style="top: 50vh; left: 80vw; font-size: 10vw;">✧</div>
     <div class="Star" style="top: 5vh; left: 80vw; font-size: 20vw;">✧</div>
-</div>
-
-<div class="Comets-Container">
-    {comets.map((comet, i) => {
-    return (
-      <div
-        class={`Comet comet${i}`}
-        style={`top: ${comet.top}; left: ${comet.left}; animation-duration: ${comet.duration}; animation-delay: ${comet.delay};`}
-      ></div>
-    )
-    })}
 </div>
 
 <style>
@@ -159,8 +140,7 @@ const comets = Array.from({ length: numComets }, () => ({
         color: var(--snow);
         
         height: 2vh;
-        width: 55vw;
-        border-radius: 0.25rem;
+        width: 46vw;
         
         letter-spacing: 0.1vw;
         
@@ -182,11 +162,10 @@ const comets = Array.from({ length: numComets }, () => ({
 
     .Line {
         position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
         bottom: 25vh;
+        left: 50%;
+        transform: translateX(-50%);
 
         width: 30vw;
         height: 1vh;
@@ -199,11 +178,52 @@ const comets = Array.from({ length: numComets }, () => ({
         z-index: 3;
     }
 
+    #Bottom-Start {
+        position: relative;
+
+        font-family: "Press Start 2P", system-ui;
+        font-weight: 1000;
+        font-size: 2vw;
+        opacity: 1;
+
+        color: var(--snow);
+        
+        height: 1vh;
+        width: 30vw;
+        
+        top: 25vh;
+        
+        letter-spacing: 0.1vw;
+        
+        transition: all 0.5s ease;
+        
+        animation: 
+            blinkColor steps(1) 1s infinite;
+
+        z-index: 1;
+
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+
+    @keyframes blinkColor {
+        25% { color: var(--snow); }
+        50% { color: black; }
+        75% { color: var(--snow); }
+        100% { color: black; }
+    }
+
     #Background {
     position: absolute;
     pointer-events: none;
     background-position: center;
     background-repeat: repeat;
+
+    user-select: none; 
 
     top: 0rem;
     width: 100%;
@@ -220,6 +240,8 @@ const comets = Array.from({ length: numComets }, () => ({
     #Mascot {
     position: absolute;
     pointer-events: none;
+
+    user-select: none; 
 
     top: 60vh;
     left: 15vw;
@@ -241,6 +263,8 @@ const comets = Array.from({ length: numComets }, () => ({
     .Header-Design {
     position: absolute;
     pointer-events: none;
+
+    user-select: none; 
 
     width: 20rem;
     height: 20rem;
@@ -278,44 +302,18 @@ const comets = Array.from({ length: numComets }, () => ({
     z-index: 0;
     }
 
-    .Comet {
-    position: absolute;
-    width: 30rem;
-    height: 5px;
-    background-color: rgb(254, 255, 246);         
-    transform: rotate(45deg);
-
-    filter: blur(3px);
-
-    opacity: 0.5;  
-    border-radius: 100%;
-    animation: moveComet 2s ease-in-out infinite;
-    }   
-    
-    .Comets-Container {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    }
-
-
-   @keyframes moveComet {
-    0% {
-        transform: translate(0px, 0px) rotate(45deg);
-    }
-    100% {
-        transform: translate(1800px, 1600px) rotate(50deg);
-    }
-    }
-
     .Stars-Container {
     position: absolute;
+
     top: 0;
     left: 0;
+
     width: 100vw;
     height: 100vh;
+
     pointer-events: none; 
+    user-select: none; 
+
     z-index: 3; 
     transition: transform 0.6s ease;
     }
@@ -380,22 +378,27 @@ const comets = Array.from({ length: numComets }, () => ({
     const Spacer = document.getElementById('Header-Spacer');
     const Stars = document.querySelector('.Stars-Container');
 
+    const BottomText = document.getElementById('Bottom-Start');
+
     const DesignContainer = document.querySelector('.Design-Wrapper');
 
     const Background = document.getElementById('Background');
 
 function scrollFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    Header.style.height = "10vh";
+    Header.style.height = "5vh";
 
     HeaderText.style.fontWeight = "100";
-    HeaderText.style.fontSize  = "2vw";
-    HeaderText.style.letterSpacing = "1vw";
+    HeaderText.style.fontSize  = "1vw";
+    HeaderText.style.letterSpacing = "0.2vw";
 
-    Spacer.style.height = "60vh";
+    Spacer.style.height = "40vh";
 
     Slogan.style.opacity = "0";
     Slogan.style.maxHeight = '0';
+
+    BottomText.style.opacity = "0";
+    BottomText.style.maxHeight = "0"; 
 
     Stars.style.transform = "translateY(-100vh)";
 
@@ -413,6 +416,9 @@ function scrollFunction() {
 
     Slogan.style.opacity = "1";
     Slogan.style.maxHeight = "2vh";   
+
+    BottomText.style.opacity = "1";
+    BottomText.style.maxHeight = "1vh"; 
 
     Stars.style.transform = "translateY(0)";
 

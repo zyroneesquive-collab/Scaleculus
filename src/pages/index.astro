@@ -2,60 +2,76 @@
 import Topic from "../data/topics.json";
 import MainLayout from "../layouts/main_layout.astro";
 import SectionElement from "../components/SectionElement.astro";
-import VerticalSection from "../components/VerticalSection.astro"
+import HorizontalSection from "../components/HorizontalSection.astro"
+import HorSection2 from "../components/Hor-Section2.astro";
 
 ---
 
 <MainLayout>
+	<HorizontalSection title="About This Website :" direction = "left" fontsize1 = "3vw" fontsize2 = "2.5rem">
+			<section>
+				Scaleculus is an interactive learning platform that teaches calculus through engaging lessons, visual explanations, and educational games!
+			</section>	
+	</HorizontalSection>
+
+	<HorSection2 title="Contents and Lessons " direction = "center" fontsize1 = "3vw" fontsize2 = "2.5rem" justifycontent = "center">
+		<section>
+				This Website Covers the Following:
+			</section>	
+	</HorSection2>
+
 	<main class = "Section-con">
+		
 		<SectionElement title = "Limits" direction = "left">
 			<section>
-				Information Placeholder
+				A value that a function approaches as the input approaches a certain number. 
 			</section>
 		</SectionElement>
 
 		<SectionElement title = "Continuity" direction = "left">
 			<section>
-				Information Placeholder
+				A function is said to be continuous in a given interval if there is no break in the graph of the function in the entire interval range.
 			</section>
 		</SectionElement>
 
 		<SectionElement title = "Slope of a Tangent Line" direction = "left">
 			<section>
-				Information Placeholder
+				It is the instantaneous rate of change of a function.
 			</section>
 		</SectionElement>
 
 		<SectionElement title = "Differentiation Rules of Algebraic Expressions" direction = "left">
 			<section>
-				Information Placeholder
+				The process of finding the derivative of algebraic functions.
 			</section>
 		</SectionElement>
 
 		<SectionElement title = "Chain Rule and Implicit Differentiation" direction = "left">
 			<section>
-				Information Placeholder
+				Used to differentiate composite functions.
 			</section>
 		</SectionElement>
 
 		<SectionElement title = "What is Calculus?" direction = "left">
 			<section>
-				Information Placeholder
+				A branch of mathematics that studies continuous change and motion using limits and derivatives.
 			</section>
 		</SectionElement>
-
-		<VerticalSection title="Title">
-			<section>
-				yes yes
-				<br>
-				hahahaha
-			</section>
-		</VerticalSection>
 
 	</main>
 </MainLayout>
 
 <style>
+	:root {
+    --wisteria: #BEADDCff;
+    --shadow-grey: #141527ff;
+    --petal-frost: #F7D3EBff;
+    --thistle: #D7BCE4ff;
+    --wisteria-2: #C493DAff;
+    --amethyst-smoke: #C18EC7ff;
+    --snow: #F8EEEDff;
+    }
+
 	.Section-con {
 		display: flex;
 		flex-wrap: wrap;
