@@ -1,67 +1,104 @@
 ---
-import Topic from "../data/topics.json";
+import Topics from "../data/topics.json";
+
 import MainLayout from "../layouts/main_layout.astro";
 import SectionElement from "../components/SectionElement.astro";
 import HorizontalSection from "../components/HorizontalSection.astro"
 import HorSection2 from "../components/Hor-Section2.astro";
+import Sidebar from '../components/Sidebar.astro';
 
 ---
 
 <MainLayout>
-	<HorizontalSection title="About This Website :" direction = "left" fontsize1 = "3vw" fontsize2 = "2.5rem">
-			<section>
-				Scaleculus is an interactive learning platform that teaches calculus through engaging lessons, visual explanations, and educational games!
-			</section>	
+	<Sidebar currentPage="Homepage">
+	</Sidebar>
+
+	<section class = "Section-con2">
+	<HorizontalSection title="About Scaleculus" direction = "center" fontsize1 = "3rem" fontsize2 = "1.25rem" justifycontent = "center" width = "30%">
+		<section>
+			Scaleculus is a student-built, non-profit platform made for learners by learners. 
+			It offers one of the most interactive ways for Grade 11 students to master calculus concepts. 
+			
+			With engaging lessons and fun educational games, Scaleculus turns learning into an exciting adventure!
+		</section>	
 	</HorizontalSection>
 
-	<HorSection2 title="Contents and Lessons " direction = "center" fontsize1 = "3vw" fontsize2 = "2.5rem" justifycontent = "center">
+	<HorizontalSection title="What We Offer" direction = "center" fontsize1 = "3rem" fontsize2 = "1.25rem" justifycontent = "center" width = "30%">
 		<section>
-				This Website Covers the Following:
-			</section>	
-	</HorSection2>
+				Scaleculus makes learning calculus fun! Explore lessons on Limits, Continuity, Tangent Lines, Differentiation, and the Chain Rule. 
+				<br>
+				<br>
+				Play interactive games in our Arcade while practicing what you learn!
+		</section>	
+	</HorizontalSection>
 
-	<main class = "Section-con">
+	</section>
+	
+	
+		<HorSection2 title = "Dive In" direction = "center" fontsize1 = "3rem" fontsize2 = "1.5rem" justifycontent = "center" width = "100%" height = "70vh">
+			<section class = "Section-con">
 		
-		<SectionElement title = "Limits" direction = "left">
-			<section>
-				A value that a function approaches as the input approaches a certain number. 
-			</section>
-		</SectionElement>
+				<SectionElement title = "Explore Concepts 🕮 " direction = "left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" height = "20rem" width = "30rem">
+					<section>
+						Understand key ideas quickly.
+					</section>
+				</SectionElement>
 
-		<SectionElement title = "Continuity" direction = "left">
-			<section>
-				A function is said to be continuous in a given interval if there is no break in the graph of the function in the entire interval range.
+				<SectionElement title = "Play games 🖳" direction = "left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" height = "20rem" width = "30rem">
+					<section>
+						Learn while having fun.
+					</section>
+				</SectionElement>
+		
+				<SectionElement title = "Test yourself ✎ " direction = "left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" height = "20rem" width = "30rem">
+					<section>
+						Test your skills and grow.
+					</section>
+				</SectionElement>
 			</section>
-		</SectionElement>
+		</HorSection2>
+	
+		<HorSection2 title = "Lessons" direction = "center" fontsize1 = "3rem" fontsize2 = "1.5rem" justifycontent = "center" width = "100%" height = "70vh">
+			<section class = "Section-con">
+			<HorSection2 title = "Limits" direction = "Left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" justifycontent = "flex-start" width = "30%" height = "30vh">
+					A value that a function approaches as the input approaches a certain number. 
+			</HorSection2>
 
-		<SectionElement title = "Slope of a Tangent Line" direction = "left">
-			<section>
-				It is the instantaneous rate of change of a function.
+			<HorSection2 title = "Continuity" direction = "Left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" justifycontent = "flex-start" width = "30%" height = "30vh">
+					A function is said to be continuous in a given interval if there is no break in the graph of the function in the entire interval range.
+			</HorSection2>
+
+			<HorSection2 title = "Slope of a Tangent Line" direction = "Left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" justifycontent = "flex-start" width = "30%" height = "30vh">
+					It is the instantaneous rate of change of a function.
+			</HorSection2>
+
+			<HorSection2 title = "Differentiation Rules of Algebraic Expressions" direction = "Left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" justifycontent = "flex-start" width = "30%" height = "30vh">
+					The process of finding the derivative of algebraic functions.
+			</HorSection2>
+			
+			<HorSection2 title = "Chain Rule and Implicit Differentiation" direction = "Left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" justifycontent = "flex-start" width = "30%" height = "30vh">
+					Used to differentiate composite functions.
+			</HorSection2>
+
+			<HorSection2 title = "What is Calculus?      " direction = "Left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" justifycontent = "flex-start" width = "30%" height = "30vh">
+					A branch of mathematics that studies continuous change and motion using limits and derivatives.
+			</HorSection2>
+
 			</section>
-		</SectionElement>
+		</HorSection2>
 
-		<SectionElement title = "Differentiation Rules of Algebraic Expressions" direction = "left">
-			<section>
-				The process of finding the derivative of algebraic functions.
-			</section>
-		</SectionElement>
+		<HorSection2 title = "About Us" direction = "center" fontsize1 = "3rem" fontsize2 = "2rem" justifycontent = "center" width = "100%" height = "10vh">
+			Scaleculus. The educational website where Grade 11 Calculus is made simple and fun.
+		</HorSection2>
 
-		<SectionElement title = "Chain Rule and Implicit Differentiation" direction = "left">
-			<section>
-				Used to differentiate composite functions.
-			</section>
-		</SectionElement>
-
-		<SectionElement title = "What is Calculus?" direction = "left">
-			<section>
-				A branch of mathematics that studies continuous change and motion using limits and derivatives.
-			</section>
-		</SectionElement>
-
-	</main>
+	
 </MainLayout>
 
 <style>
+	html, body {
+    overflow-x: hidden; 
+}
+
 	:root {
     --wisteria: #BEADDCff;
     --shadow-grey: #141527ff;
@@ -76,8 +113,36 @@ import HorSection2 from "../components/Hor-Section2.astro";
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		
-		gap: 0.5rem;
+
+		gap: 2rem;
 		justify-content: center; 
 	}
+
+	.Section-con2 {
+    display: flex;               
+    flex-wrap: wrap;            
+    align-items: center;          
+    justify-content: center;     
+    gap: 1rem;
+
+    width: 100%;
+    min-height: 100vh;          
+
+    background-color: rgba(20, 21, 39, 0.4);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+
+    border: 2px solid var(--wisteria-2);
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(193, 142, 199, 0.4);
+
+	margin-bottom: 10rem;
+
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+
+    box-sizing: border-box;
+	}
+
 </style>

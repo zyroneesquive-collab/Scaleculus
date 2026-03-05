@@ -1,7 +1,7 @@
 ---
 import Topics from "../data/topics.json";
 
-import Header from "../components/Header.astro";
+import SmallHeader from "../components/Small_Header.astro";
 import HorSection2 from "../components/Hor-Section2.astro";
 
 import ColorPalette from "../color_p/color_style1.json";
@@ -9,15 +9,6 @@ import ColorPalette from "../color_p/color_style1.json";
 import "../styles/style1.css";
 
 const {title = "Scaleculus! | Calculus Learning Platform"} = Astro.props;
-
-const numComets = 5;
-
-const comets = Array.from({ length: numComets }, () => ({
-  top: `-20vh`,     
-  left: `${Math.random() * 60 - 50}vw`,
-  duration: `${(3 + Math.random() * 2).toFixed(4)}s`, 
-  delay: `${(1 + Math.random() * 8).toFixed(4)}s`         
-}));
 
 const mathIcons = ["∑","∫","∆","∂","∞","√","θ","≈","∇","dx"];
 
@@ -42,7 +33,7 @@ const mathIcons = ["∑","∫","∆","∂","∞","√","θ","≈","∇","dx"];
         <img class = "Background" src ="/Scaleculus/background/gradient_sky.jpg" alt="">
 
         <div class="Stars">
-        {Array.from({ length: 50 }).map((_, i) => (
+        {Array.from({ length: 10 }).map((_, i) => (
         <div
         class="Star"
         style={`
@@ -56,9 +47,11 @@ const mathIcons = ["∑","∫","∆","∂","∞","√","θ","≈","∇","dx"];
     ))}
     </div>
 
-      <Header></Header>
+    <SmallHeader></SmallHeader>
+    
       <slot />
-      <HorSection2 title="Made with ❤ from Scalable!" direction = "left" fontsize1 = "1rem" fontsize2 = "1rem" justifycontent = "flex-start" width = "100%">
+
+    <HorSection2 title="Made with ❤ from Scalable!" direction = "left" fontsize1 = "1rem" fontsize2 = "1rem" justifycontent = "flex-start" width = "100%">
 		  <section>
 				:)
 			</section>	
@@ -66,19 +59,8 @@ const mathIcons = ["∑","∫","∆","∂","∞","√","θ","≈","∇","dx"];
 	</body>
 </html>
 
-<div class="Comets-Container">
-    {comets.map((comet, i) => {
-    return (
-      <div
-        class={`Comet comet${i}`}
-        style={`top: ${comet.top}; left: ${comet.left}; animation-duration: ${comet.duration}; animation-delay: ${comet.delay};`}
-      ></div>
-    )
-    })}
-</div>
-
 <style>
-    body {
+   body {
         background: var(--shadow-grey);
     }
 

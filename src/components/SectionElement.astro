@@ -1,10 +1,14 @@
 ---
-const {direction, title} = Astro.props;
+const {direction, title, fontsize1, fontsize2, height, width} = Astro.props;
 
 ---
 
 <main class = "Info_Section" style={`
     --direction: ${direction};
+    --fontsize1: ${fontsize1};
+    --fontsize2: ${fontsize2};
+    --height: ${height};
+    --width: ${width};
 `}>
     <img class = "Info_bg" src ="/Scaleculus/background/iso-republic-milky-way-detail.jpg" alt="">
     <section class = "Info-Con">
@@ -43,8 +47,8 @@ const {direction, title} = Astro.props;
         border-right: 0.5rem solid var(--petal-frost);
         border-radius: 0.2rem;
 
-        min-height: 30rem;
-        width: 15rem;
+        min-height: var(--height);
+        width: var(--width);
 
         margin: 1rem;
 
@@ -60,21 +64,23 @@ const {direction, title} = Astro.props;
     }
 
     .Info_bg {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        
-        opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;           /* make sure it starts at the left */
+    width: 100%;
+    height: 100%;
 
-        object-fit: cover;
-        background: var(--shadow-grey);
-        filter: blur(3px) hue-rotate(60deg);
+    opacity: 0.5;
 
-        -webkit-mask-image: linear-gradient(to top, black 75%, transparent 50%);
-        mask-image: linear-gradient(to top, black 5%, transparent 75%);
-        
-        z-index: 1;
-    }   
+    object-fit: cover;   /* keeps aspect ratio and fills container */
+    background: var(--shadow-grey);
+    filter: blur(3px) hue-rotate(60deg);
+
+    -webkit-mask-image: linear-gradient(to top, black 75%, transparent 50%);
+    mask-image: linear-gradient(to top, black 5%, transparent 75%);
+
+    z-index: 0;          /* put behind content */
+    }
 
     .Line {
         position: relative;
@@ -110,7 +116,7 @@ const {direction, title} = Astro.props;
 
         color: var(--snow);
         font-family: "Quicksand", sans-serif;
-        font-size: 1.5rem;
+        font-size: var(--fontsize1);
         font-weight: 1000;
 
         text-align: var(--direction);
@@ -132,9 +138,6 @@ const {direction, title} = Astro.props;
         text-align: left;
 
         color: var(--snow);
-        font-family: "Quicksand", sans-serif;
-        font-weight: 500;
-        font-size: 1vw;
 
         padding: 1rem;
         text-align: var(--direction);
@@ -151,7 +154,7 @@ const {direction, title} = Astro.props;
         color: var(--snow);
         font-family: "Quicksand", sans-serif;
         font-weight: 500;
-        font-size: 1.25rem;
+        font-size: var(--fontsize2);;
 
         padding: 0;
         text-align: var(--direction);

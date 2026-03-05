@@ -1,13 +1,138 @@
 ---
-const {page} = Astro.props;
+const { isOpen = false, currentPage = "" } = Astro.props;
 ---
 
-<main>
-    <section>
-        <img src="/Scaleculus/icons/home.png" alt="home_button" id = "Home-Button"></img>
-    </section>
-</main>
+<!-- Permanent home button top-left -->
+<button class="Home-Button">
+    <img src="/Scaleculus/icons/home.png" alt="Home Icon" />
+</button>
+
+<div class="Sidebar" data-open={isOpen}>
+    <div class="Sidebar-Content">
+        <nav>
+            <a href="/Scaleculus/" class={currentPage === "Homepage" ? "active" : ""}>Homepage</a>
+            <a href="/Scaleculus/limits" class={currentPage === "Limits" ? "active" : ""}>Limits</a>
+            <a href="/Scaleculus/continuity" class={currentPage === "continuity" ? "active" : ""}>Continuity</a>
+            <a href="/Scaleculus/derivatives" class={currentPage === "derivatives" ? "active" : ""}>Derivatives</a>
+            <a href="/Scaleculus/chain-rule" class={currentPage === "chain" ? "active" : ""}>Chain Rule</a>
+            <a href="/Scaleculus/about" class={currentPage === "about" ? "active" : ""}>About</a>
+        </nav>
+    </div>
+</div>
 
 <style>
-    
+:root {
+    --wisteria: rgb(190, 173, 220);
+    --shadow-grey: rgb(20, 21, 39);
+    --snow: #F8EEEDff;
+}
+
+/* Permanent home button */
+.Home-Button {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--wisteria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1001;
+    transition: background 0.2s;
+}
+
+.Home-Button:hover {
+    background-color: rgba(190, 173, 220, 0.8);
+}
+
+.Home-Button img {
+    width: 70%;
+    height: auto;
+    filter: invert(1);
+}
+
+/* Sidebar */
+.Sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 0;
+    background-color: rgba(20,21,39,0.9);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    border-right: 2px solid var(--wisteria);
+    box-shadow: 2px 0 10px rgba(193,142,199,0.5);
+    overflow-x: hidden;
+    transition: width 0.3s ease;
+    z-index: 999;
+}
+
+/* Open sidebar */
+.Sidebar[data-open="true"] {
+    width: 18rem;
+}
+
+/* Sidebar content */
+.Sidebar-Content {
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 1rem 2rem 1rem; /* top padding increased to 4rem */
+    height: 100%;
+    gap: 1rem;
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.Sidebar[data-open="true"] .Sidebar-Content {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Links */
+.Sidebar-Content a {
+    display: block;
+    text-decoration: none;
+    color: var(--snow);
+    font-family: "Quicksand", sans-serif;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+.Sidebar-Content a:hover {
+    background-color: rgba(190,173,220,0.3);
+}
+
+.Sidebar-Content a.active {
+    background-color: var(--wisteria);
+    color: var(--shadow-grey);
+    font-weight: 700;
+}
+
+/* Push main content */
+.Sidebar[data-open="true"] ~ .Main-Content {
+    margin-left: 18rem;
+    transition: margin-left 0.3s ease;
+}
 </style>
+
+<script type="module">
+document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.querySelector('.Sidebar');
+    const homeButton = document.querySelector('.Home-Button');
+
+    if (!sidebar || !homeButton) return;
+
+    homeButton.addEventListener('click', () => {
+        const isOpen = sidebar.getAttribute('data-open') === 'true';
+        sidebar.setAttribute('data-open', !isOpen);
+    });
+});
+</script>

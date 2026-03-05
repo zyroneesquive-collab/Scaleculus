@@ -1,12 +1,14 @@
 ---
-const {direction, title, fontsize1, fontsize2, justifycontent} = Astro.props;
+const {direction, title, fontsize1, fontsize2, justifycontent, width, height} = Astro.props;
 ---
 
-<main class = "Info_Section" style={`
+<main class="Info_Section" style={`
     --direction: ${direction};
     --fontsize1: ${fontsize1};
     --fontsize2: ${fontsize2};
     --justifycontent: ${justifycontent};
+    --width: ${width};
+    --height: ${height};
 `}>
     <section class = "Info-Con">
         <header class="Title-Con">
@@ -35,23 +37,27 @@ const {direction, title, fontsize1, fontsize2, justifycontent} = Astro.props;
 
     
     .Info_Section {
-        background-color: rgba(20, 21, 39, 0.4); 
-        width: 100vw;
-        min-height: 10rem;
+        background-color: rgba(20, 21, 39, 0.1); 
+        width: var(--width);
+        min-height: var(--height);
         
+        border-radius: 1rem;
+
         position: relative;
         overflow: auto;
 
-        backdrop-filter: blur(2px);
-        -webkit-backdrop-filter: blur(5px); 
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px); 
 
         border-bottom: 0.1rem solid var(--wisteria-2);
         border-top: 0.1rem solid var(--wisteria-2);
 
-        box-shadow: 0rem 0rem 1rem 0.1rem var(--wisteria-2);
+        margin-top: 1rem;
+        margin-bottom: 5rem;
+
+        box-shadow: 0rem 0rem 0.5rem 0.01rem var(--wisteria-2);
         padding: 1rem;
 
-        margin: 5rem 0rem 10rem;
         color: var(--snow);
         z-index: 1;
     }
@@ -88,7 +94,7 @@ const {direction, title, fontsize1, fontsize2, justifycontent} = Astro.props;
 
         color: var(--snow);
         font-family: "Quicksand", sans-serif;
-        font-size: var(--fontsize1);
+        font-size: var(--fontsize1);  
         font-weight: 1000;
 
         margin-left: 1rem;
@@ -104,7 +110,7 @@ const {direction, title, fontsize1, fontsize2, justifycontent} = Astro.props;
 
         color: var(--snow);
 
-        width: 100vw;
+        width: 20vw;
         height: 0.5vh;
         
         left: 50%;
@@ -134,7 +140,7 @@ const {direction, title, fontsize1, fontsize2, justifycontent} = Astro.props;
         border-left: 0.5rem solid var(--snow);
         border-right: 0.5rem solid var(--snow);
 
-        background: rgba(242, 214, 255, 0.089);
+        background: rgba(242, 214, 255, 0.062);
         border-radius: 0.2rem;
 
     }
