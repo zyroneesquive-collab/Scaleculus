@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://n0cturneler.github.io',
-  base: '/Scaleculus',
+  base: '/Scaleculus/',
 
   vite: {
     plugins: [tailwindcss()]
