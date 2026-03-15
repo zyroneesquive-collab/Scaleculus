@@ -47,9 +47,9 @@ const { isOpen = false, currentPage = "" } = Astro.props;
     left: 1rem;
     width: 3rem;
     height: 3rem;
-    border: none;
+    border: solid rgb(17, 1, 31);
     border-radius: 0.5rem;
-    background-color: var(--wisteria);
+    background-color: rgb(220, 160, 255);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,7 +59,7 @@ const { isOpen = false, currentPage = "" } = Astro.props;
 }
 
 .Home-Button:hover {
-    background-color: rgba(190, 173, 220, 0.8);
+    background-color: var(--wisteria);
 }
 
 .Home-Button img {
@@ -82,7 +82,7 @@ const { isOpen = false, currentPage = "" } = Astro.props;
     box-shadow: 2px 0 10px rgba(193,142,199,0.5);
     overflow-x: hidden;
     transition: width 0.3s ease;
-    z-index: 999;
+    z-index: 100;
 }
 
 /* Open sidebar */

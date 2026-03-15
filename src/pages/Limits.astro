@@ -4,6 +4,7 @@ import SubLayout from "../layouts/sub_layout.astro";
 import Sidebar from '../components/Sidebar.astro';
 import HorSection2 from "../components/Hor-Section2.astro";
 import Accordion from "../components/Accordion.astro";
+import StepList from '../components/StepsElement.astro';
 ---
 
 <SubLayout title={Topics.Titles[0]}>
@@ -15,17 +16,34 @@ import Accordion from "../components/Accordion.astro";
     <nav class="toc">
   <ul>
     <li>
-      <a href="#Title_limits">Limits</a>
+      <a href="#Title_limits">➤ Limits</a>
       <ul> <!-- nested list for hierarchy -->
-        <li><a href="#Limits">Video Lesson</a></li>
+        <li><a href="#Limits_Video">● Video Lesson</a></li>
+        <li><a href="#Limits_Definition">● What are Limits?</a></li>
       </ul>
     </li>
     <li>
-      <a href="#OtherSection">Other Section</a>
+      <a href="#Title_DS">➤ Direct Substitution</a>
       <ul>
-        <li><a href="#Sub1">Subsection 1</a></li>
-        <li><a href="#Sub2">Subsection 2</a></li>
+        <li><a href="#DS_Expo">● Exponential</a></li>
+        <li><a href="#DS_Trigo">● Trigonometric</a></li>
+        <li><a href="#DS_Log">● Logarithmic</a></li>
       </ul>
+    </li>
+    <li>
+      <a href="#Title_Table">➤ Table of Values</a>
+    </li>
+    <li>
+      <a href="#Title_IF">➤ Limits of IF (0/0)</a>
+    </li>
+    <li>
+      <a href="#Title_OSL">➤ One-Sided Limits (OSL)</a>
+    </li>
+    <li>
+      <a href="#Title_Infinite">➤ Infinite Limits</a>
+    </li>
+    <li>
+      <a href="#Title_Graph">➤ Limits of Graph</a>
     </li>
   </ul>
 
@@ -41,15 +59,763 @@ import Accordion from "../components/Accordion.astro";
         title="Limits"
         id="Title_limits"
         direction="left"
-        fontsize1="5rem"
+        fontsize1="4rem"
         fontsize2="2rem"
-        justifycontent="center"
+        justifycontent="flex-start"
         width="100%"
       >
-        Placeholder Information
+      </HorSection2>
+
+      <HorSection2
+        title="Video Lesson"
+        id="Limits_Video"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+        [Insert Video]  
+      </HorSection2>
+
+      <HorSection2
+        title="What are Limits?"
+        id="Limits_Definition"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+        A limit is a value that a function approaches as the input approaches a certain number. <br>The general form is: <br><br>
+        y = a•bx where: <br><br>
+        •a is a constant (initial value). <br> 
+        •b is the base, and it’s typically a positive real number. <br>
+        •x is the exponent. <br> 
+        Exponential Function: f(x) = a • t <br>
+      </HorSection2>
+
+        <HorSection2
+        title="Direct Substitution with Limits"
+        id="Title_DS"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+       Direct substitution is a method for evaluating limits by directly replacing the variable with the value it is approaching. <br>
+        If the function is continuous at that point, the limit equals the value of the function at that input. <br>
+      </HorSection2>
+
+       <HorSection2
+        title="Direct Substitution with Exponential Functions"
+        id="DS_Expo"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+        Direct substitution with exponential functions is a method for evaluating limits by plugging the value that x approaches directly into the function. <br><br>
+        If the base of the exponential function is positive and the function is continuous at that point, the limit can be found simply by substitution. <br><br>
+
+        <Accordion
+        title="Example 1: (Click to View)"
+        id="Example 1: (Click to View)a"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        1. Solve for x in the equation: 2x = 8 <br>
+        Solution: We need to express both sides of the equation with the same base. <br>
+        Since 8 = 2³, we can rewrite the equation as: <br>
+        2x = 2³ <br>
+        Now that both sides have the same base, we set the exponents equal to each other: <br>
+        x = 3 <br>
+        Result: The value of x is 3. <br><br>
+        </Accordion>
+
+        <Accordion
+        title="Example 2: (Click to View)"
+        id="Example 2: (Click to View)a"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        2. Solve for x in the equation: 5 • 3x = 45 <br>
+        Solution: <br>
+        Start by dividing both sides by 5: <br>
+        5•3x / 5 = 45 / 5 <br>
+        3x = 9 <br>
+        Next, express 9 as a power of 3: <br>
+        9 = 3² <br>
+        Now the equation becomes: <br>
+        3x = 3² <br>
+        Since the bases are the same, set the exponents equal to each other: <br>
+        x = 2 <br>
+        Result: The value of x is 2. <br><br>
+        </Accordion>
+
+        <Accordion
+        title="The Fractional Exponent: (Click to View)"
+        id="Example 3: (Click to View)a"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        3. The Fractional Exponent Limit (Radical Form) <br>
+        Problem: lim 9^(x/2), x → 4 <br>
+        Solution: 9^(4/2) = 9² <br>
+        9 × 9 = 81 <br>
+        Since the function is continuous at x = 4, we plug it in: <br>
+        Result: The limit is 81. <br><br>
+        </Accordion>
+
+        <Accordion
+        title="The Power Function Limit: (Click to View)"
+        id="Example 4: (Click to View)a"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        4. The Power Function Limit <br>
+        In this case, we have a variable in both the base and the exponent. As long as the base is positive at the limit point, direct substitution remains our best friend. <br>
+        Problem: lim (x - 1)^(x + 1), x → 3 <br>
+        Solution: We substitute x = 3 into both the base and the exponent simultaneously: <br>
+        Base: (3 - 1) = 2 <br>
+        Exponent: (3 + 1) = 4 <br>
+        Now, evaluate the resulting exponential expression: <br>
+        2⁴ = 2 × 2 × 2 × 2 = 16 <br>
+        Result: The limit is 16.
+        </Accordion>
+
+      </HorSection2>
+
+       <HorSection2
+        title="Direct Substitution with Trigonometric Functions"
+        id="DS_Trigo"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+
+        Definition: Trigonometric functions are functions of an angle. The basic trigonometric functions are: <br><br>
+        Sine: sin (θ)<br>
+        Cosine: cos (θ)<br>
+        Tangent: tan (θ)<br>
+        Secant: sec (θ)<br>
+        Cosecant: csc (θ)<br>
+        Cotangent: cot (θ)<br><br>
+
+        Direct substitution with trigonometric functions is a method for evaluating limits by directly replacing x with the value it approaches. <br><br>
+        If the trigonometric function is continuous at that point, the limit equals the value of the function at x. <br><br>
+
+        <Accordion
+        title="The Basic Sine Limit: (Click to View)"
+        id="Example 1: (Click to View)b"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        1. The Basic Sine Limit <br>
+        This example involves a simple trigonometric function. We can apply direct substitution here. <br>
+        Problem: lim sin(x), as x → 30° <br>
+        Solution: Substitute x = 30° directly into the sine function: <br>
+        sin(30°) = 1/2 <br>
+        Result: The limit is 1/2. <br><br>
+        </Accordion>
+
+        <Accordion
+        title="The Basic Tangent Limit: (Click to View)"
+        id="Example 2: (Click to View)b"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+         2. The Basic Tangent Limit <br>
+        This example uses a simple trigonometric function. We can directly substitute here as well. <br>
+        Problem: lim tan(x) as x → 45° <br>
+        Solution: Substitute x = 45° directly into the tangent function: <br>
+        tan(45°) = 1 <br>
+        Result: The limit is 1. <br><br>
+        </Accordion>
+
+        <Accordion
+        title="The Composite Root-Trig Limit: (Click to View)"
+        id="Example 3: (Click to View)b"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        3. The Composite "Root-Trig" Limit <br>
+        This example nests a trigonometric function inside a square root. For direct substitution to work, the value inside the square root must be non-negative. <br>
+        Problem: lim √(2cos(x)), x → π/3 <br>
+        Solution: Substitute x = π/3 directly into the cosine function: <br>
+        cos(π/3) = 1/2 <br>
+        Multiply by the constant: 2 • 1/2 = 1 <br>
+        Apply the root: √1 = 1 <br>
+        Result: The limit is 1. <br><br>
+        </Accordion>
+
+        <Accordion
+        title="Example The Reciprocal Product Limit: (Click to View)"
+        id="Example 4: (Click to View)b"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+       4. The Reciprocal Product Limit <br>
+        This example uses sec(x) (which is 1/cos(x)) and a squared term. Track multiple operations at once. <br>
+        Problem: lim sec²(x) • sin(x), x → π/6 <br>
+        Solution: Substitute x = π/6 into both parts: <br>
+        Find sec(π/6): cos(π/6) = √3/2 → sec(π/6) = 2/√3 <br>
+        Square it: (2/√3)² = 4/3 <br>
+        Find sin(π/6): sin(π/6) = 1/2 <br>
+        Multiply them: 4/3 • 1/2 = 4/6 = 2/3 <br>
+        Result: The limit is 2/3. <br>
+        </Accordion>
+
+      </HorSection2>
+
+      <HorSection2
+        title="Direct Substitution with Logarithmic Functions"
+        id="DS_Log"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+
+       Definition: A logarithmic equation is the inverse of an exponential equation. The general form is: y = log<sub>b</sub>(x) <br>
+        • b is the base. <br>
+        • x is the argument. <br>
+        • y is the result. <br><br>
+
+      Logarithmic Function: f(x) = log<sub>b</sub>(x) <br>
+        Properties: <br>
+        • log<sub>b</sub>(b<sup>x</sup>) = x <br>
+        • b<sup>log<sub>b</sub>(x)</sup> = x <br><br>
+
+        <Accordion
+        title="Example 1: (Click to View)"
+        id="Example 1: (Click to View)c"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+       1. Problem: lim log<sub>2</sub>(x) = 5 <br>
+        Solution: Rewrite the given equation in exponential form: <br>
+        log<sub>2</sub>(x) = 5 → 2<sup>5</sup> = x <br>
+        Result: x = 32 <br><br>
+        </Accordion>
+
+        <Accordion
+        title="Example 2: (Click to View)"
+        id="Example 2: (Click to View)c"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+         2. Problem: lim log<sub>3</sub>(x) = 4 <br>
+        Solution: Rewrite the given equation in exponential form: <br>
+        log<sub>3</sub>(x) = 4 → 3<sup>4</sup> = x <br>
+        Result: x = 81 <br><br>
+        </Accordion>
+
+        <Accordion
+        title="Example 3: (Click to View)"
+        id="Example 3: (Click to View)c"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        3. Problem: lim log<sub>2</sub>(2x - 5), as x → 3 <br>
+        Solution: Substitute x = 3 into the expression and simplify: <br>
+        log<sub>2</sub>[2(3) - 5] <br>
+        = log<sub>2</sub>(6 - 5) <br>
+        = log<sub>2</sub>(1) <br>
+        Since 2<sup>0</sup> = 1, log<sub>2</sub>(1) = 0 <br>
+        Result: The limit is 0 <br><br>
+        </Accordion>
+
+        <Accordion
+        title="Example 4: (Click to View)"
+        id="Example 4: (Click to View)c"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        4. Problem: lim log<sub>10</sub>((2x)/(x - 4)), as x → 5 <br>
+        Solution: Substitute x = 5 into the fraction: <br>
+        Numerator: 2(5) = 10 <br>
+        Denominator: 5 - 4 = 1 <br>
+        Fraction: 10/1 = 10 <br>
+        Apply the logarithm: log<sub>10</sub>(10) <br>
+        Since 10<sup>1</sup> = 10, log<sub>10</sub>(10) = 1 <br>
+        Result: The limit is 1 <br>
+        </Accordion>
+
+      </HorSection2>
+
+       <HorSection2
+        title="Direct Substitution with Table of Values"
+        id="Title_Table"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+      Limits Using Table of Values is a method for estimating the limit of a function by observing the function’s output as the input values get closer to a certain number. <br><br>
+        Steps: <br>
+        • Choose x-values approaching the point of interest from both the left and the right. <br>
+        • Calculate the corresponding f(x) values for each x. <br>
+        • Observe the trend of f(x) as x gets closer to the target value. <br>
+        • The value that f(x) approaches is the estimated limit. <br>
+
+        <Accordion
+        title="Example 1: (Click to View)"
+        id="Example 1: (Click to View)d"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+       Problem no. 1: f(x) = (3x - 1)/x, x → 1 <br>
+        Solution: Substitute x = 1 directly into the expression: <br>
+        (3(1) - 1)/1 = 2 <br>
+        Make a table for x approaching 1 from the left and right: <br><br>
+
+        Left-hand approach (x → 1⁻): <br>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>x</th>
+                <th>f(x)</th>
+            </tr>
+            <tr><td>0.5</td><td>1.464</td></tr>
+            <tr><td>0.8</td><td>1.746</td></tr>
+            <tr><td>0.9</td><td>1.848</td></tr>
+            <tr><td>0.99</td><td>1.977</td></tr>
+            <tr><td>0.999</td><td>1.997</td></tr>
+        </table> <br>
+
+        Right-hand approach (x → 1⁺): <br>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>x</th>
+                <th>f(x)</th>
+            </tr>
+            <tr><td>1.001</td><td>2.004</td></tr>
+            <tr><td>1.01</td><td>2.02</td></tr>
+            <tr><td>1.1</td><td>2.05</td></tr>
+            <tr><td>1.2</td><td>2.045</td></tr>
+            <tr><td>1.5</td><td>2.131</td></tr>
+        </table> <br>
+
+        Result: The limit of f(x) as x → 1 is 2 because both sides approach 2. <br><br>
+        </Accordion>
+
+        <Accordion
+        title="Example 2: (Click to View)"
+        id="Example 2: (Click to View)d"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+         Problem no. 2: f(x) = (4x - 3)/x, x → 4 <br>
+        Solution: Substitute x = 4 directly into the expression: <br>
+        (4(4) - 3)/4 = 1 <br>
+        Make a table for x approaching 4 from the left and right: <br><br>
+
+        Left-hand approach (x → 4⁻): <br>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>x</th>
+                <th>f(x)</th>
+            </tr>
+            <tr><td>3</td><td>1</td></tr>
+            <tr><td>3.5</td><td>2</td></tr>
+            <tr><td>3.9</td><td>3.48220</td></tr>
+            <tr><td>3.99</td><td>3.94493</td></tr>
+            <tr><td>3.999</td><td>3.99446</td></tr>
+        </table> <br>
+
+        Right-hand approach (x → 4⁺): <br>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>x</th>
+                <th>f(x)</th>
+            </tr>
+            <tr><td>4.001</td><td>4.00555</td></tr>
+            <tr><td>4.01</td><td>4.05584</td></tr>
+            <tr><td>4.1</td><td>4.59479</td></tr>
+            <tr><td>4.5</td><td>8</td></tr>
+            <tr><td>5</td><td>16</td></tr>
+        </table> <br>
+
+        Result: From both the left and right, f(x) approaches 4. Therefore, the overall limit of f(x) as x → 4 is 4. <br>
+        </Accordion>
+
+        <Accordion
+        title="Example 3: (Click to View)"
+        id="Example 3: (Click to View)d"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+       <h3>Problem 3: lim<sub>x → 0</sub> (x / sin x)</h3>
+        <p>Solution: Using a table of values to estimate the limit from both sides.</p>
+
+        <p>Left-hand approach (x → 0⁻):</p>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>x</th>
+                <th>f(x)</th>
+            </tr>
+            <tr><td>-1</td><td>57.2987</td></tr>
+            <tr><td>-0.5</td><td>57.2965</td></tr>
+            <tr><td>-0.1</td><td>57.2958</td></tr>
+            <tr><td>-0.01</td><td>57.2958</td></tr>
+            <tr><td>-0.001</td><td>57.2958</td></tr>
+        </table><br>
+
+        <p>Right-hand approach (x → 0⁺):</p>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>x</th>
+                <th>f(x)</th>
+            </tr>
+            <tr><td>1</td><td>57.2987</td></tr>
+            <tr><td>0.5</td><td>57.2965</td></tr>
+            <tr><td>0.1</td><td>57.2958</td></tr>
+            <tr><td>0.01</td><td>57.2958</td></tr>
+            <tr><td>0.001</td><td>57.2958</td></tr>
+        </table><br>
+
+        <p>Result: The limit of f(x) = x / sin(x) as x → 0 is approximately 57.2957 because both sides approach the same value.</p>
+        </Accordion>
+
+        <Accordion
+        title="Example 4: (Click to View)"
+        id="Example 4: (Click to View)d"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        <h3>Problem 4: lim<sub>x → π/2</sub> cos x</h3>
+        <p>Solution: Using a table of values to estimate the limit from both sides.</p>
+
+        <p>Left-hand approach (x → π/2⁻):</p>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>x</th>
+                <th>f(x)</th>
+            </tr>
+            <tr><td>1.5</td><td>-0.9991</td></tr>
+            <tr><td>1.57</td><td>-1</td></tr>
+            <tr><td>1.570</td><td>-1</td></tr>
+            <tr><td>1.5707</td><td>-1</td></tr>
+            <tr><td>1.57079</td><td>-1</td></tr>
+        </table><br>
+
+        <p>Right-hand approach (x → π/2⁺):</p>
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>x</th>
+                <th>f(x)</th>
+            </tr>
+            <tr><td>1.6</td><td>-0.9985</td></tr>
+            <tr><td>1.58</td><td>-1</td></tr>
+            <tr><td>1.570</td><td>-1</td></tr>
+            <tr><td>1.5708</td><td>-1</td></tr>
+            <tr><td>1.57079</td><td>-1</td></tr>
+        </table><br>
+
+        <p>Result: The limit of cos(x) as x → π/2 is -1 because both sides approach -1.</p>
+        </Accordion>
+
+      </HorSection2>
+      
+      <HorSection2
+        title="Limits of IF 0/0 (Indeterminate Form)"
+        id="Title_IF"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+
+      0/0 is an indeterminate form because it does not have a unique solution. It can arise in limits, and further analysis (like L'Hopital’s Rule) is needed. <br><br>
+
+        <Accordion
+        title="Example 1: (Click to View)"
+        id="Example 1: (Click to View)e"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        1. Problem: Evaluate the limit: <br>
+       Solution: <br>
+       Using L'Hopital's Rule: <br>
+       Since the direct substitution gives 0/0, we apply L'Hopital's Rule, which involves differentiating the numerator and denominator: <br><br>
+       d/dx[sin(x)] = cos(x) <br>
+       d/dx[x] = 1 <br><br>
+       Now, substitute the derivatives into the limit: <br>
+       lim<sub>x→0</sub> cos(x)/1 <br>
+       Substitute x = 0: <br>
+       cos(0) = 1 <br>
+       Result: The limit is 1. <br><br>
+         </Accordion>
+
+        <Accordion
+        title="Example 2: (Click to View)"
+        id="Example 2: (Click to View)e"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+       2. Problem: Evaluate the limit: <br>
+       lim<sub>x→1</sub> (x² - 1)/(x - 1) <br>
+       Solution: <br>
+       Direct substitution gives 0/0, so we apply factoring to simplify the expression. <br>
+       Factor the numerator: <br>
+       x² - 1 = (x - 1)(x + 1) <br>
+       Now, the expression becomes: <br>
+       (x - 1)(x + 1)/(x - 1) <br>
+       Cancel out the common factor of (x - 1): <br>
+       x + 1 <br>
+       Substitute x = 1: <br>
+       1 + 1 <br>
+       Result: The limit is 2. <br><br>
+         </Accordion>
+
+        <Accordion
+        title="Example 3: (Click to View)"
+        id="Example 3: (Click to View)e"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        3. The Algebraic Factoring Method <br>
+       Problem: Find the limit of (x² - 9)/(x - 3) as x → 3 <br>
+       Solution: simplify the given expression <br>
+       (x - 3)(x + 3)/(x - 3) <br>
+       The (x - 3) terms cancel out, leaving us with lim (x + 3) as x → 3 <br>
+       Solve: x + 3 = 3 + 3 = 6 <br>
+       Result: The limit is 6. <br><br>
+        </Accordion>
+
+        <Accordion
+        title="Example 4: (Click to View)"
+        id="Example 4: (Click to View)e"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        4. Problem: Find the limit of the following function as x approaches 3: <br>
+       lim<sub>x→3</sub> (x² - 2x - 3)/(x - 3) <br>
+       Solution: Find the factors of the numerator <br>
+       We need two numbers that multiply to -3 and add to -2. Those numbers are -3 and 1. <br>
+       x² - 2x - 3 = (x - 3)(x + 1) <br>
+       Now the expression becomes: <br>
+       (x - 3)(x + 1)/(x - 3) <br>
+       Simplify: <br>
+       As long as x ≠ 3 (which is true for the "approach" of a limit), we can cancel out the common (x - 3) term: <br>
+       (x - 3)(x + 1)/(x - 3) = x + 1 <br>
+       Re-evaluate the limit: <br>
+       x + 1 = 3 + 1 = 4 <br>
+       Result: The limit is 4. <br>
+        </Accordion>
+
+      </HorSection2>
+
+      <HorSection2
+        title="One-Sided Limits (OSL)"
+        id="Title_OSL"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+
+      A one-sided limit is the value that a function approaches from one direction (either from the left or the right). <br>
+      Left-hand limit: lim as x→a- <br>
+
+        <Accordion
+        title="Example 1: (Click to View)"
+        id="Example 1: (Click to View)f"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+         1. Evaluate the one-sided limit: <br>
+       lim<sub>x→0+</sub> 1/x <br>
+       Solution: As x→0+, 1/x approaches infinity: <br>
+       lim<sub>x→0+</sub> 1/x = +∞ <br><br>
+       </Accordion>
+        <Accordion
+        title="Example 2: (Click to View)"
+        id="Example 2: (Click to View)f"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+       2. Evaluate the one-sided limit: <br>
+       lim<sub>x→0-</sub> 1/x <br>
+       Solution: As x→0-, 1/x approaches negative infinity: <br>
+       lim<sub>x→0-</sub> 1/x = -∞ <br><br>
+        </Accordion>
+
+        <Accordion
+        title="Example 3: (Click to View)"
+        id="Example 3: (Click to View)f"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        3. Problem: Given the function below, find lim f(x) as x→1-  and lim f(x) as x→1+ <br>
+       f(x) = x + 2  if x &lt; 1  <br>
+        f(x) = x² - 4  if x &ge; 1  <br>
+       Solution: Find the value approaching from the left and right of 1 <br>
+       Approach from the left (x→1-): <br>
+       When x is less than 1, we use the top piece of the function: f(x) = x + 2 <br>
+       Plug x = 1 into that equation: <br>
+       1 + 2 = 3 <br><br>
+       Approach from the right (x→1+): <br>
+       When x is greater than or equal to 1, we use the bottom piece: f(x) = x² - 4 <br>
+       Plug x = 1 into that equation: <br>
+       (1)² - 4 = 1 - 4 = -3 <br><br>
+       Result: Left-hand limit (x→1-) = 3 <br>
+               Right-hand limit (x→1+) = -3 <br>
+               Overall limit: DNE <br><br>
+        </Accordion>
+
+        <Accordion
+        title="Example 4: (Click to View)"
+        id="Example 4: (Click to View)f"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+       4. Problem: Find the one-sided limits and overall limit of f(x) as x approaches 2 <br>
+       f(x) = 3x - 4  if x &lt; 2 <br>
+              x² - 2    if x &ge; 2 <br>
+       Solution: Find the value approaching 2 from the left and right <br><br>
+
+       Evaluate the Left-Hand Limit (x → 2⁻): <br>
+       When x approaches from the left, x &lt; 2, so we use the top piece: f(x) = 3x - 4 <br>
+       Plug in x = 2: <br>
+       3(2) - 4 = 6 - 4 = 2 <br><br>
+
+       Evaluate the Right-Hand Limit (x → 2⁺): <br>
+       When x approaches from the right, x &ge; 2, so we use the bottom piece: f(x) = x² - 2 <br>
+       Plug in x = 2: <br>
+       (2)² - 2 = 4 - 2 = 2 <br><br>
+
+       Result: Left-Hand Limit = 2 <br>
+               Right-Hand Limit = 2 <br>
+               Overall Limit = 2 <br>
+        </Accordion>
+
+      </HorSection2>
+
+      <HorSection2
+        title="Infinite Limits"
+        id="Title_Infinite"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+
+      Definition: An infinite limit occurs when the value of a function increases or decreases without bound as the input approaches a certain number.<br><br>
+      If f(x) → ∞ as x → a, the function grows positively without bound.<br>
+      If f(x) → -∞ as x → a, the function decreases negatively without bound.<br><br>
+      Infinite limits often indicate a vertical asymptote at x = a.<br><br>
+
+        <Accordion
+        title="Example 1: (Click to View)"
+        id="Example 1: (Click to View)g"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        1. Problem: Find the limit of f(x) = 1/x² as x → 0 <br>
+        Solution: <br>
+        Look at the right-hand side (x → 0⁺) <br>
+        Pick a tiny positive number like 0.1 <br>
+        0.1² = 0.01 <br>
+        1 / 0.01 = 100 <br>
+        As x gets even smaller (like 0.001), the result becomes 1,000,000. It is heading towards +∞. <br>
+        Look at the left-hand side (x → 0⁻) <br>
+        Pick a tiny negative number like -0.01 <br>
+        When you square a negative, it becomes positive: (-0.01)² = 0.0001 <br>
+        1 / 0.0001 = 10,000 <br>
+        Even though x started negative, x² is positive. So this also heads toward +∞ <br>
+        Result: Left side (x → 0⁻) = +∞ <br>
+                Right side (x → 0⁺) = +∞ <br>
+                Overall limit: Since both sides go to +∞, the overall limit is ∞ <br><br>
+       </Accordion>
+        <Accordion
+        title="Example 2: (Click to View)"
+        id="Example 2: (Click to View)g"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+       2. Problem: Find the limit of f(x) = 2x / (x - 1) as x → 1 <br>
+        Solution: <br>
+        Find the right-hand limit (x → 1⁺) <br>
+        Imagine a number slightly bigger than 1, like 1.01 <br>
+        Numerator: 2(1.01) ≈ 2 (positive number) <br>
+        Denominator: 1.01 - 1 = 0.01 (a tiny positive number) <br>
+        lim 2x / (x - 1) → +∞ <br>
+        Find the left-hand limit (x → 1⁻) <br>
+        Imagine a number slightly smaller than 1, like 0.99 <br>
+        Numerator: 2(0.99) ≈ 2 (positive number) <br>
+        Denominator: 0.99 - 1 = -0.01 (a negative number) <br>
+        lim 2x / (x - 1) → -∞ <br>
+        Result: Right-Hand Limit (x → 1⁺) = +∞ <br>
+                Left-Hand Limit (x → 1⁻) = -∞ <br>
+                Overall Limit: The two sides are heading in opposite directions, therefore the limit is DNE <br>
+        </Accordion>
       </HorSection2>
 
       <div class="Spacer"></div>
+
+    
 
 
       <Accordion
@@ -81,6 +847,10 @@ import Accordion from "../components/Accordion.astro";
   --shadow-grey: rgb(20,21,39);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .Spacer { margin-top: 10rem; }
 
 /* TOC Island */
@@ -98,7 +868,7 @@ import Accordion from "../components/Accordion.astro";
   height: 100vh;             /* full viewport height */
   padding: 2rem 1em;
   width: 14em;
-  background: rgba(20,21,39,0.95);
+  background: rgba(30, 20, 39, 0.95);
   border-radius: 0 1rem 1rem 0;
   box-shadow: 0 0 1rem rgba(190,173,220,0.5);
   z-index: 1;

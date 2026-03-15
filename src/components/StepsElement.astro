@@ -1,0 +1,94 @@
+---
+interface Step {
+  number: number | string;
+  text: string;
+}
+
+const { 
+  steps = [] as Step[], 
+  width = "100%", 
+  height = "auto", 
+  direction = "left",
+  fontsize1 = "3rem",   // max number box font size
+  fontsize2 = "1.25rem"   // max text font size
+} = Astro.props;
+---
+
+<main class="Step_Section" style={`
+  --width: ${width};
+  --height: ${height};
+  --fontsize1: ${fontsize1};
+  --fontsize2: ${fontsize2};
+  --direction: ${direction};
+`}>
+  {steps.map((step: Step, index: number) => (
+    <div class="Step_Item">
+      <div class="Step_Number">{step.number}</div>
+      <div class="Step_Text">{step.text}</div>
+      {index < steps.length - 1 && <div class="Step_Line"></div>}
+    </div>
+  ))}
+</main>
+
+<style>
+.Step_Section {
+  width: var(--width);
+  min-height: var(--height);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* spacing between steps */
+  padding: 1rem;
+  background-color: rgba(20, 21, 39, 0.05);
+  border-radius: 1rem;
+  box-shadow: 0 0 0.25rem 0.01rem rgba(193, 142, 199, 0.3);
+}
+
+/* Step container */
+.Step_Item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  position: relative;
+}
+
+/* Number box - now rounded rectangle */
+.Step_Number {
+  flex-shrink: 0;
+  width: clamp(3rem, 10%, var(--fontsize1)); 
+  height: clamp(2rem, 6vw, calc(var(--fontsize1) * 0.6)); /* rectangle height */
+  min-width: clamp(3rem, 10%, var(--fontsize1));
+  border-radius: 0.5rem;  /* rounded rectangle */
+  background: #c18ec7;
+  color: white;
+
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1rem, 4vw, var(--fontsize1));
+  box-shadow: 0 0 6px rgba(193, 142, 199, 0.6);
+}
+
+/* Step text */
+.Step_Text {
+  font-family: "Quicksand", sans-serif;
+  font-size: clamp(0.8rem, 2vw, var(--fontsize2));
+  color: #fff;
+  line-height: 1.4;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Line connects the number box */
+.Step_Line {
+  position: absolute;
+  left: 50%;
+  top: calc(var(--fontsize1) * 0.6); /* start at bottom of the rectangle */
+  transform: translateX(-50%);
+  width: 2px;
+  height: calc(100% - calc(var(--fontsize1) * 0.6)); /* extend to next step */
+  background: rgba(193, 142, 199, 0.5);
+  z-index: 0;
+}
+</style>
