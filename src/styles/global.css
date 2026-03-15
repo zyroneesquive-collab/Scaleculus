@@ -56,29 +56,12 @@ body {
   margin-bottom: 2rem;
 }
 
-/* The circle around the number */
+/* The circle around the number - hidden but counter kept */
 .starlight-container ol li::before {
-  content: counter(steps-counter);
-  position: absolute;
-  left: -1rem;
-  top: 0;
-  width: 2rem;
-  height: 2rem;
-  line-height: 2rem;
-  text-align: center;
-  border-radius: 50%;
-  background-color: var(--wisteria-2);
-  color: var(--snow);
-  font-weight: bold;
+  content: none;
 }
 
-/* The line between the circles */
+/* The line between the circles - hidden */
 .starlight-container ol li:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  left: -0.05rem;
-  top: 2rem;
-  bottom: -2rem;
-  width: 2px;
-  background-color: var(--wisteria-2);
+  content: none;
 }

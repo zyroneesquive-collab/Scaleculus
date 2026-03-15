@@ -1,23 +1,26 @@
 ---
 import Topics from "../data/topics.json";
 import SubLayout from "../layouts/sub_layout.astro";
-import Lesson from "../content/lesson_text/limits.mdx";
 import Sidebar from '../components/Sidebar.astro';
+
+import HorSection2 from "../components/Hor-Section2.astro";
+import NavigationBar from "../components/NavigationBar.astro";
+
 ---
 
 <SubLayout title={Topics.Titles[0]}>
   <Sidebar currentPage="Homepage">
 	</Sidebar>
+  
+  <div class="Spacer"></div>
 
- <main class="sl-dark Main-Content">
-  <div class="starlight-container">
-    <Lesson />
-  </div>
-</main>
+  <HorSection2 title="Limits" direction = "left" fontsize1 = "5rem" fontsize2 = "2rem" justifycontent = "center" width = "100%">
+    Placeholder Information
+  </HorSection2>
 </SubLayout>
 
 <style>
   .Spacer {
-    margin-top: 200rem;
+    margin-top: 10rem;
   }
 </style>
