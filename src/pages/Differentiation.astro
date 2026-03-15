@@ -9,26 +9,34 @@ import StepList from '../components/StepsElement.astro';
 
 <SubLayout title={Topics.Titles[0]}>
 
-  <Sidebar currentPage="Limits"></Sidebar>
+  <Sidebar currentPage="Slope"></Sidebar>
 
   <div class="page-wrapper">
     <!-- TOC -->
     <nav class="toc">
   <ul>
     <li>
-      <a href="#Title_limits">➤ Limits</a>
+      <a href="#Title_Derivative">➤ Derivative</a>
       <ul> <!-- nested list for hierarchy -->
-        <li><a href="#Limits_Video">● Video Lesson</a></li>
-        <li><a href="#Limits_Definition">● What are Limits?</a></li>
+        <li><a href="#Derivative_Video">● Video Lesson</a></li>
       </ul>
+
     </li>
     <li>
-      <a href="#Title_DS">➤ Direct Substitution</a>
-      <ul>
-        <li><a href="#DS_Expo">● Exponential</a></li>
-        <li><a href="#DS_Trigo">● Trigonometric</a></li>
-        <li><a href="#DS_Log">● Logarithmic</a></li>
+      <a href="#Derivative_Definition">➤ Derivative</a>
+      <ul> <!-- nested list for hierarchy -->
+        <li><a href="#Derivative_Concept">● Concept Explanation</a></li>
+        <li><a href="#Derivative_Visual">● Visual Explanation</a></li>
       </ul>
+
+    </li>
+    <li>
+      <a href="#Derivative_Rules">➤ Derivative Rules</a>
+
+    </li>
+    <li>
+      <a href="#Derivative_Examples">➤ Derivative Examples</a>
+
     </li>
   </ul>
 
@@ -41,8 +49,8 @@ import StepList from '../components/StepsElement.astro';
     <main class="main-content">
       <div class="Spacer"></div>
       <HorSection2
-        title="Limits"
-        id="Title_limits"
+        title="Slope of a Tangent Line"
+        id="Title_Derivative"
         direction="left"
         fontsize1="4rem"
         fontsize2="2rem"
@@ -53,7 +61,7 @@ import StepList from '../components/StepsElement.astro';
 
       <HorSection2
         title="Video Lesson"
-        id="Limits_Video"
+        id="Derivative_Video"
         direction="left"
         fontsize1="4rem"
         fontsize2="2rem"
@@ -64,30 +72,214 @@ import StepList from '../components/StepsElement.astro';
       </HorSection2>
 
       <HorSection2
-        title="What are Limits?"
-        id="Limits_Definition"
+        title="What is a Derivative?"
+        id="Derivative_Definition"
         direction="left"
         fontsize1="4rem"
         fontsize2="2rem"
         justifycontent="flex-start"
         width="100%"
       >
-        A limit is a value that a function approaches as the input approaches a certain number. <br>The general form is: <br><br>
-        y = a•bx where: <br><br>
-        •a is a constant (initial value). <br> 
-        •b is the base, and it’s typically a positive real number. <br>
-        •x is the exponent. <br> 
-        Exponential Function: f(x) = a • t <br>
+        <strong>Definition:</strong><br>
+      &nbsp;&nbsp;A derivative measures the <strong>rate of change</strong> of a function with respect to a variable.<br>
+      &nbsp;&nbsp;In simpler words: It tells us how <strong>fast something is changing</strong> at a specific point.<br><br>
+
+
+        <Accordion
+        title="Concept Explanation"
+        id="ConceptExplanation"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        <strong>Concept Explanation:</strong><br>
+        &nbsp;&nbsp;Imagine a car moving on a road. The position of the car depends on time.<br>
+        &nbsp;&nbsp;If we ask: <strong>“How fast is the car moving at exactly 5 seconds?”</strong><br>
+        &nbsp;&nbsp;That <strong>instant speed</strong> is the derivative.<br><br>
+
+        &nbsp;&nbsp;So:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;• Position → derivative = Velocity<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;• Velocity → derivative = Acceleration<br><br>
+        </Accordion>
+
+        <Accordion
+        title="Visual Explanation"
+        id="VisualExplanation"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        <strong>Visual Concept:</strong><br>
+        &nbsp;&nbsp;The derivative is the <strong>slope of the tangent line</strong> to a curve at a specific point.<br>
+        &nbsp;&nbsp;• Secant line → average change<br>
+        &nbsp;&nbsp;• Tangent line → instantaneous change<br>
+        &nbsp;&nbsp;As two points get closer together, the secant line becomes the tangent line.<br>
+        &nbsp;&nbsp;That <strong>limiting process</strong> is what defines a derivative.
+        </Accordion>
       </HorSection2>
 
+      <HorSection2
+        title="Derivative Rules"
+        id="Derivative_Rules"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+        <h3>Why Do We Need Derivative Rules?</h3>
+    The derivative comes from <strong>limits</strong>, which can be long and complicated.<br>
+    Instead of solving limits every time, mathematicians developed <strong>rules</strong> that make differentiation <strong>fast and systematic</strong>.<br><br>
 
-      <div class="Spacer"></div>
+        <Accordion
+        title="A. Constant Rule: (Click to View)"
+        id="A. Constant Rule"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        &nbsp;&nbsp;Concept: A constant does not change. No change → <strong>zero rate of change</strong>.<br>
+        <strong>Equation:</strong> d/dx [c] = 0<br><br>
+        </Accordion>
+        
+        <Accordion
+        title="B. Power Rule"
+        id="B. Power Rule"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        &nbsp;&nbsp;Concept: The exponent controls how fast the function grows. The derivative shows how steep the curve becomes.<br>
+<strong>Equation:</strong> d/dx [xⁿ] = n·xⁿ⁻¹<br><br>
+&nbsp;&nbsp;Why it works: When you apply the <strong>limit definition</strong> to powers of x, this pattern always appears.<br><br>
+        </Accordion>
 
-      <HorSection2 title="Made with ❤ from Scalable!" direction = "left" fontsize1 = "1rem" fontsize2 = "1rem" justifycontent = "flex-start" width = "100%">
-		  <section>
-				:)
-			</section>	
-	    </HorSection2>
+        <Accordion
+        title="C. Sum and Difference Rules"
+        id="C. Sum and Difference Rules"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        &nbsp;&nbsp;Concept: If two functions are added or subtracted, their <strong>rates of change</strong> also add or subtract.<br>
+<strong>Equation:</strong> (f + g)' = f' + g'<br><br>
+
+        </Accordion>
+
+        <Accordion
+        title="D. Constant Multiple Rule"
+        id="D. Constant Multiple Rule"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        &nbsp;&nbsp;Concept: If a function is stretched vertically by a constant, its slope is also stretched by that same constant.<br>
+<strong>Equation:</strong> (c·f)' = c·f'<br><br>
+
+        </Accordion>
+
+        <Accordion
+        title="E. Product Rule"
+        id="E. Product Rule"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        &nbsp;&nbsp;Concept: When two functions multiply, both are changing.<br>
+        &nbsp;&nbsp;Equation: <strong>d/dx [f(x)·g(x)] = f'(x)·g(x) + f(x)·g'(x)</strong><br><br>
+
+        </Accordion>
+
+        <Accordion
+        title="F. Quotient Rule"
+        id="F. Quotient Rule"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        &nbsp;&nbsp;Concept: When dividing two changing functions, the numerator and denominator both affect the rate.<br>
+      &nbsp;&nbsp;Equation: <strong>d/dx [f(x)/g(x)] = [f'(x)·g(x) − f(x)·g'(x)] / [g(x)]²</strong><br><br>
+
+        </Accordion>
+
+        <Accordion
+        title="G. Chain Rule"
+        id="G. Chain Rule"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        &nbsp;&nbsp;Concept: Used when a function is inside another function.<br>
+    &nbsp;&nbsp;Example:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Outer function: (something)⁵<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;Inner function: 3x + 1<br>
+    &nbsp;&nbsp;Equation: <strong>d/dx [f(g(x))] = f'(g(x))·g'(x)</strong>
+
+        </Accordion>
+
+      </HorSection2>
+
+      <HorSection2
+title="Made with ❤ from Scalable!"
+direction="left"
+fontsize1="1rem"
+fontsize2="1rem"
+justifycontent="flex-start"
+width="100%"
+>
+<section class="Section-End">
+    <div class="NavButtons">
+        <a href="/Scaleculus/Continuity" class="PrevBtn">← Continuity</a>
+        <a href="/Scaleculus/Differentiation" class="NextBtn">Differentiation →</a>
+    </div>
+
+</section>
+
+<style>
+.Section-End{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+}
+
+.NavButtons{
+    display:flex;
+    justify-content:space-between;
+    margin-top:0.5rem;
+}
+
+.PrevBtn,
+.NextBtn{
+    font-family:"Quicksand", sans-serif;
+    font-size:2rem;
+    text-decoration:none;
+    padding:0.35rem 0.8rem;
+    border-radius:0.4rem;
+
+    color:var(--snow);
+    background:rgba(231,179,255,0.08);
+
+    transition:all 0.2s ease;
+}
+
+.PrevBtn:hover,
+.NextBtn:hover{
+    background:rgba(231,179,255,0.18);
+    box-shadow:0 0 6px rgba(193,142,199,0.4);
+    transform:translateY(-2px);
+}
+</style>
+
+
 
     </main>
   </div>

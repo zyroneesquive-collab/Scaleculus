@@ -7,29 +7,45 @@ import Accordion from "../components/Accordion.astro";
 import StepList from '../components/StepsElement.astro';
 ---
 
-<SubLayout title={Topics.Titles[0]}>
+<SubLayout title={Topics.Titles[1]}>
 
-  <Sidebar currentPage="Limits"></Sidebar>
+  <Sidebar currentPage="Continuity"></Sidebar>
 
   <div class="page-wrapper">
     <!-- TOC -->
     <nav class="toc">
   <ul>
     <li>
-      <a href="#Title_Continuity">➤ Continuity</a>
-      <ul> <!-- nested list for hierarchy -->
+      <a href="#Title_Continuity">➤ Continuity and Discontinuity</a>
+      <ul> 
         <li><a href="#Continuity_Video">● Video Lesson</a></li>
-        <li><a href="#Continuity_Definition">● What is Continuity?</a></li>
-        <li><a href="#Discontinuity_Definition">● What is Discontinuity?</a></li>
       </ul>
     </li>
     <li>
-      <a href="#Title_DS">➤ Direct Substitution</a>
-      <ul>
-        <li><a href="#DS_Expo">● Exponential</a></li>
-        <li><a href="#DS_Trigo">● Trigonometric</a></li>
-        <li><a href="#DS_Log">● Logarithmic</a></li>
+        <a href="#Title_Definition">➤ Definition</a>
+        <ul>
+            <li><a href="#Title_Examples">● Examples</a></li>
       </ul>
+    </li>
+    <li>
+        <a href="#Title_Application">➤ Application</a>
+    </li>
+    <li>
+      <a href="#Types_Disco">➤ Types Of Discon.</a>
+      <ul>
+        <li><a href="#Removable_Disco">● Removable</a></li>
+        <li><a href="#Essential_Disco">● Essential</a></li> 
+      </ul>
+    </li>
+    <li>
+      <a href="#Types_Essential">➤ Types Of Essential Discontinuity</a>
+      <ul>
+        <li><a href="#Jump_Disco">● Jump Essential</a></li>
+        <li><a href="#Infinite_Disco">● Infinite Essential</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#Interval_Con">➤ Continuity on an Interval</a>
     </li>
   </ul>
 
@@ -42,8 +58,8 @@ import StepList from '../components/StepsElement.astro';
     <main class="main-content">
       <div class="Spacer"></div>
       <HorSection2
-        title="Limits"
-        id="Title_limits"
+        title="Continuity and Discontinuity"
+        id="Title_Continuity"
         direction="left"
         fontsize1="4rem"
         fontsize2="2rem"
@@ -54,7 +70,7 @@ import StepList from '../components/StepsElement.astro';
 
       <HorSection2
         title="Video Lesson"
-        id="Limits_Video"
+        id="Continuity_Video"
         direction="left"
         fontsize1="4rem"
         fontsize2="2rem"
@@ -65,113 +81,536 @@ import StepList from '../components/StepsElement.astro';
       </HorSection2>
 
       <HorSection2
-        title="What are Limits?"
-        id="Limits_Definition"
+        title="Definition"
+        id="Title_Definition"
         direction="left"
         fontsize1="4rem"
         fontsize2="2rem"
         justifycontent="flex-start"
         width="100%"
       >
-        A limit is a value that a function approaches as the input approaches a certain number. <br>The general form is: <br><br>
-        y = a•bx where: <br><br>
-        •a is a constant (initial value). <br> 
-        •b is the base, and it’s typically a positive real number. <br>
-        •x is the exponent. <br> 
-        Exponential Function: f(x) = a • t <br>
-      </HorSection2>
-
-      <HorSection2
-        title="Direct Substitution with Exponential Functions"
-        id="DS_Expo"
-        direction="left"
-        fontsize1="4rem"
-        fontsize2="2rem"
-        justifycontent="flex-start"
-        width="100%"
-      >
-        Direct substitution with exponential functions is a method for evaluating limits by plugging the value that x approaches directly into the function. <br><br>
-        If the base of the exponential function is positive and the function is continuous at that point, the limit can be found simply by substitution. <br><br>
-
         <Accordion
-        title="Example 1: (Click to View)"
-        id="Example 1: (Click to View)a"
+        title="Continuity: (Click to View)"
+        id="Continuity"
         direction="left"
         justifycontent="flex-start"
         fontsize1="2rem"
         fontsize2="1.5rem"
         >
-        1. Solve for x in the equation: 2x = 8 <br>
-        Solution: We need to express both sides of the equation with the same base. <br>
-        Since 8 = 2³, we can rewrite the equation as: <br>
-        2x = 2³ <br>
-        Now that both sides have the same base, we set the exponents equal to each other: <br>
-        x = 3 <br>
-        Result: The value of x is 3. <br><br>
+        <h3>CONTINUITY</h3>
+        A function is said to be <strong>continuous</strong> in a given interval if there is no break in the graph of the function in the entire interval range. At x = a, the following conditions must be satisfied:<br><br>
+
+        <strong>1.</strong> f is defined at x = a<br>
+        <strong>2.</strong> The limit of f(x) as x approaches a exists, i.e., <strong>lim f(x) as x → a</strong><br>
+        <strong>3.</strong> f(a) = <strong>lim f(x) as x → a</strong>
+        </Accordion>
+
+        <Accordion
+        title="Discontinuity: (Click to View)"
+        id="Discontinuity"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        <h3>DISCONTINUITY</h3>
+        A function is <strong>discontinuous</strong> at a point if there is a <strong>break, hole, jump,</strong> or <strong>vertical asymptote</strong> at that point. A function is discontinuous if:<br><br>
+
+        <strong>1.</strong> It is undefined at a point<br>
+        <strong>2.</strong> The limit does not exist<br>
+        <strong>3.</strong> The limit exists but is not equal to the function value <strong>f(a)</strong>
+        </Accordion>
+
+      </HorSection2>
+
+
+      <HorSection2
+        title="Examples"
+        id="Title_Examples"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+        <Accordion
+        title="Example Continuity: (Click to View)"
+        id="Continuity_Example"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        <h3>SAMPLE PROBLEM</h3>
+        f(x) = x² − 4<br><br>
+
+        <strong>Step 1: Check if f(2) exists</strong><br>
+        f(2) = 2² − 4 = 0<br>
+        <strong>Defined</strong><br><br>
+
+        <strong>Step 2: Find the limit</strong><br>
+        Since it’s a polynomial, we substitute directly:<br>
+        lim f(x) as x → 2 = 2² − 4 = 0<br><br>
+
+        <strong>Step 3: Compare</strong><br>
+        lim f(x) as x → 2 = f(2)<br><br>
+
+        <strong>Answer:</strong> The function is <strong>continuous</strong> at x = 2. <br>
+
+        <h3>Graph Description</h3>
+    When we input the values into a graph, we see a <strong>smooth parabola</strong> that opens upward. The graph is shaped like a “U” and has its <strong>lowest point</strong> at (0, 4).<br><br>
+
+    As x moves toward any value, including x = 2, the function values from the left and right approach the same number. For example, as x approaches 2, the graph approaches 0 from both sides, and the function value at 2 is also 0.<br><br>
+
+    There are <strong>no jumps, holes, or breaks</strong> anywhere on the graph, which shows that the function is <strong>continuous for all real numbers</strong>.
+
+        <iframe src="https://www.desmos.com/calculator/9ekhfko36i?embed" 
+        width="600" 
+        height="400" 
+        style="border: 1px solid #ccc;">
+        </iframe>
+        
+
+        </Accordion>
+
+        <Accordion
+        title="Example Discontinuity: (Click to View)"
+        id="Discontinuity_Example"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        <h3>SAMPLE PROBLEM: PIECEWISE FUNCTION</h3>
+        <strong>f(x) = </strong><br>
+        &nbsp;&nbsp;<span>&#123;</span><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;3, if x &lt; 2<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;7, if x ≥ 2<br>
+        &nbsp;&nbsp;<span>&#125;</span><br><br>
+
+        <strong>Step 1: Left-hand limit</strong><br>
+        lim f(x) as x → 2⁻ = 3<br><br>
+
+        <strong>Step 2: Right-hand limit</strong><br>
+        lim f(x) as x → 2⁺ = 7<br><br>
+
+        <strong>Step 3: Compare</strong><br>
+        Since 3 ≠ 7,<br>
+        <strong>the limit does not exist</strong> at x = 2.<br>
+
+        <h3>Graph Description: Jump Discontinuity</h3>
+    Inputting the values into a graph, we can see that for <strong>x &lt; 2</strong>, the graph stays at <strong>y = 3</strong>, while for <strong>x ≥ 2</strong>, the graph is <strong>y = 7</strong>.<br><br>
+
+    At x = 2, there is an <strong>open circle</strong> at (2, 3) and a <strong>filled dot</strong> at (2, 7).<br><br>
+
+    We can clearly see a <strong>sudden jump</strong> in the graph, which visually represents a <strong>jump discontinuity</strong> because the graph does not connect smoothly at that point.<br>
+
+        <iframe src="https://www.desmos.com/calculator/mbdquam3ty?embed" 
+        width="600" 
+        height="400" 
+        style="border: 1px solid #ccc;" 
+        ></iframe>
+        </Accordion>
+
+      </HorSection2>
+
+      <HorSection2
+        title="Application Of Continuity and Discontinuity"
+        id="Title_Application"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+        <h3>Applications of Continuity and Discontinuity</h3>
+        <strong>Continuity:</strong> Continuous functions are used to model <strong>smooth, predictable behaviors</strong> in real life, such as motion, temperature changes, and economics, where there are no sudden jumps or breaks.<br><br>
+
+        <strong>Discontinuity:</strong> Discontinuous functions are used to represent <strong>sudden changes or abrupt events</strong>, such as switching circuits, stock price jumps, or step functions in engineering and physics. <br><br>
+
+        <Accordion
+        title="Applications of Continuity: (Click to View)"
+        id="Application_Con"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+       <h3>APPLICATIONS OF CONTINUITY</h3>
+        <strong>Physics:</strong> Smooth motion of objects.<br>
+        &nbsp;&nbsp;When a car moves, it doesn’t suddenly disappear and reappear somewhere else. It moves smoothly from one spot to another. That smooth movement is known as <strong>continuity</strong>.<br><br>
+
+        <strong>Engineering:</strong> Design and constructions.<br>
+        &nbsp;&nbsp;Engineers design roads, bridges, and roller coasters with smooth curves. If there were sudden breaks or jumps in the design, it would be dangerous.<br><br>
+
+        <strong>Heart Rate Monitoring:</strong><br>
+        &nbsp;&nbsp;Our heartbeat changes gradually when we exercise. Doctors study smooth patterns in heart rate. Sudden irregular jumps may signal a problem.
+        </Accordion>
+
+        <Accordion
+        title="Applications of Discontinuity: (Click to View)"
+        id="Application_Discon"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        <h3>APPLICATIONS OF DISCONTINUITY</h3>
+        <strong>Switching Circuits / Electronics:</strong><br>
+        &nbsp;&nbsp;Turning a device ON/OFF causes current to change abruptly instead of gradually.<br><br>
+
+        <strong>Stock Market:</strong><br>
+        &nbsp;&nbsp;Sometimes stock prices jump suddenly due to big news or events. This sudden change is a <strong>discontinuity</strong> in the price chart.<br><br>
+
+        <strong>Tax Brackets:</strong><br>
+        &nbsp;&nbsp;When income passes a certain limit, the tax rate jumps suddenly. This abrupt change in rate is a real-life example of a <strong>discontinuity</strong>.
+        </Accordion>
+        </HorSection2>
+
+        <HorSection2
+        title="Types of Discontinuity"
+        id="Types_Disco"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+        <h3>Types of Discontinuity</h3>
+    There are two common types of discontinuity in functions:<br><br>
+
+        <strong>1. Removable Discontinuity:</strong><br>
+        &nbsp;&nbsp;A <strong>removable discontinuity</strong> happens when a function has a <strong>hole</strong> at a point. <br>
+        &nbsp;&nbsp;This occurs if the <strong>limit exists</strong> at that point but the <strong>function value</strong> is missing or does not match the limit.<br>
+
+        <strong>2. Essential Discontinuity:</strong><br>
+        &nbsp;&nbsp;An <strong>essential discontinuity</strong> occurs when the <strong>limit of the function does not exist (DNE)</strong> as it approaches a point. <br>
+        &nbsp;&nbsp;This breaks the second condition for continuity: <strong>the limit of f(x) as x → a must exist</strong>.<br><br>
+        
+        <Accordion
+        title="Removable Discontinuity: (Click to View)"
+        id="Removable_Disco"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        <h3>Removable Discontinuity</h3>
+        A <strong>removable discontinuity</strong> happens when a function has a <strong>hole</strong> at a point. <br>
+        This occurs if the <strong>limit exists</strong> at that point but the <strong>function value</strong> is missing or does not match the limit. <br>
+        </Accordion>
+
+        <Accordion
+        title="Essential Discontinuity: (Click to View)"
+        id="Essential_Disco"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        <h3>Essential Discontinuity</h3>
+        An <strong>essential discontinuity</strong> occurs when the <strong>limit of the function does not exist (DNE)</strong> as it approaches a point. <br>
+        This breaks the second condition for continuity: <strong>the limit of f(x) as x → a must exist</strong>.<br>
+        
+        </Accordion>
+        </HorSection2>
+
+        <HorSection2
+        title="Application Of Essential and Removable Discontinuity"
+        id="Title_Application"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+
+        <Accordion
+        title="Applications of Removable Discontinuity: (Click to View)"
+        id="Application_RDiscon"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+       <h3>Applications of Removable Discontinuity</h3>
+        <strong>Mathematical Models / Simulations:</strong><br>
+        &nbsp;&nbsp;Some formulas are undefined at a single point (like dividing by zero). Redefining the value at that point fixes the <strong>“hole”</strong> in the model.<br><br>
+
+        <strong>Engineering:</strong><br>
+        &nbsp;&nbsp;When designing curves (roads, tracks, ramps), a tiny missing point or undefined spot can create a <strong>hole</strong>. Fixing that spot makes the curve smooth again.<br><br>
+
+        <strong>Animation / Video Games:</strong><br>
+        &nbsp;&nbsp;A character might jump slightly or a frame might be missing in an animation. Adding the missing frame “fills the hole” just like removing a <strong>removable discontinuity</strong>.
+        </Accordion>
+
+        <Accordion
+        title="Applications of Essential Discontinuity: (Click to View)"
+        id="Application_EDiscon"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        <h3>Applications of Essential Discontinuity</h3>
+        <strong>Physics:</strong><br>
+        &nbsp;&nbsp;Modeling phenomena that have sudden spikes or singularities, like electric field strength near a point charge.<br><br>
+
+        <strong>Engineering:</strong><br>
+        &nbsp;&nbsp;Designing systems where abrupt changes occur, such as switching circuits that jump from one current to another instantly.<br><br>
+
+        <strong>Finance / Economics:</strong><br>
+        &nbsp;&nbsp;Representing sudden jumps in stock prices, interest rates, or other financial indicators where the values change abruptly at certain points.
+        </Accordion>
+        
+      </HorSection2>
+
+      <HorSection2
+        title="Types of Essential Discontinuity"
+        id="Types_Essential"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+        <h3>Jump Essential Discontinuity</h3>
+        A <strong>jump essential discontinuity</strong> occurs when the <strong>left-hand limit and right-hand limit</strong> of a function approach <strong>different values</strong> at a point, or when one of the limits does not exist. <br>
+        This creates a <strong>sudden jump</strong> in the function, breaking the continuity at that point.<br>
+
+        <h3>Infinite (Essential) Discontinuity</h3>
+        An <strong>infinite essential discontinuity</strong> occurs when the <strong>limit of the function from both the left and right</strong> approaches <strong>infinity or negative infinity</strong> at a point. <br>
+        This means the function shoots up or down without bound, breaking continuity at that point.<br><br>
+
+        <Accordion
+        title="Jump Essential Discontinuity Example: (Click to View)"
+        id="Jump_Disco"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        <h3>Example: Determining Continuity at x = 2</h3>
+    Consider the function defined piecewise as:<br><br>
+
+    <strong>f(x) = </strong><br>
+    &nbsp;&nbsp;<span>&#123;</span><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;(x − 2)², if x &lt; 2<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;(x − 2)² + 3, if x ≥ 2<br>
+    &nbsp;&nbsp;<span>&#125;</span><br><br>
+
+    <strong>Step 1: Left-hand limit</strong><br>
+    &nbsp;&nbsp;Use the first piece (x &lt; 2) and plug in x = 2:<br>
+    &nbsp;&nbsp;f(x) = (2 − 2)² = 0<br>
+    &nbsp;&nbsp;Left-hand limit = 0<br><br>
+
+    <strong>Step 2: Right-hand limit</strong><br>
+    &nbsp;&nbsp;Use the second piece (x ≥ 2) and plug in x = 2:<br>
+    &nbsp;&nbsp;f(x) = (2 − 2)² + 3 = 3<br>
+    &nbsp;&nbsp;Right-hand limit = 3<br><br>
+
+    <strong>Conclusion:</strong><br>
+    &nbsp;&nbsp;Since the left-hand limit ≠ right-hand limit, the function is <strong>discontinuous at x = 2</strong>.
+
+        <h3>Graph Description: Jump Discontinuity</h3>
+            Inputting the function into a graph, we can see that the value from the <strong>right</strong> as x approaches 2 is <strong>3</strong>, while from the <strong>left</strong> it is approaching <strong>0</strong>.<br>
+            We can clearly see in the graph the visual representation of the <strong>jump discontinuity</strong> as the function <strong>jumps from 0 to 3</strong>.<br>
+            Open and filled circles at x = 2 help highlight the jump: <br>
+            &nbsp;&nbsp;• Hollow circle at (2,0) for the left-hand value.<br>
+            &nbsp;&nbsp;• Filled circle at (2,3) for the right-hand value.<br>
+
+        <iframe src="https://www.desmos.com/calculator/mx0r8pt9gl?embed" 
+        width="600" 
+        height="400" 
+        style="border: 1px solid #ccc;" 
+        ></iframe>
+        </Accordion>    
+
+        <Accordion
+        title="Infinite Essential Discontinuity: (Click to View)"
+        id="Infinite_Disco"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        <h3>Example: Determine Continuity at x = 4</h3>
+    Consider the function:<br><br>
+
+    <strong>f(x) = 1 / (x − 4)</strong><br><br>
+
+    <strong>Step 1: Right-hand limit</strong><br>
+&nbsp;&nbsp;For x &gt; 4, x - 4 &gt; 0.<br>
+&nbsp;&nbsp;As we input values just to the right of 4, f(x) = 1 / (x - 4) gets larger and larger.<br>
+&nbsp;&nbsp;Meaning, it is approaching <strong>positive infinity</strong>.<br><br>
+
+    <strong>Step 2: Left-hand limit</strong><br>
+&nbsp;&nbsp;For x &lt; 4, x - 4 &lt; 0.<br>
+&nbsp;&nbsp;As we input values just to the left of 4, f(x) = 1 / (x - 4) becomes increasingly negative.<br>
+&nbsp;&nbsp;Meaning, it is approaching <strong>negative infinity</strong>.<br><br>
+
+    <strong>Conclusion:</strong><br>
+    &nbsp;&nbsp;Since the left-hand limit → −∞ and the right-hand limit → ∞, the function is <strong>infinitely discontinuous</strong> at x = 4.<br><br>
+
+    <h3>Graph Description: Infinite (Essential) Discontinuity</h3>
+    In the graph, as we input the function, we can see that it is approaching <strong>infinity</strong> from both the <strong>left</strong> and <strong>right</strong> sides.<br>
+    There is a clear <strong>vertical asymptote</strong> at x = 4.<br>
+    This visually represents the <strong>infinite discontinuity</strong> as the function shoots up and down without bound near x = 4.<br>
+     <iframe src="https://www.desmos.com/calculator/ihkh9jtntn?embed" 
+        width="600" 
+        height="400" 
+        style="border: 1px solid #ccc;" 
+        ></iframe>
+        </Accordion>
+        
+      </HorSection2>
+
+      <HorSection2
+        title="Application Of Jump Essential and Infinite Essential Discontinuity"
+        id="Types_Essential"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+
+        <Accordion
+        title="Applications of Jump Essential Discontinuity: (Click to View)"
+        id="Application_JED"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        <h3>Applications of Jump (Essential) Discontinuity</h3>
+        <strong>Digital Logic and Computing:</strong><br>
+        &nbsp;&nbsp;A computer bit is either 0 or 1. When a signal changes from "off" to "on," we model it as a <strong>jump</strong>. There is no "0.5" state in binary logic.<br><br>
+
+            <strong>Income Tax Brackets:</strong><br>
+            &nbsp;&nbsp;Your marginal tax rate <strong>jumps</strong> to a higher percentage when income crosses certain thresholds.<br><br>
+
+            <strong>Quantum Jumps:</strong><br>
+            &nbsp;&nbsp;In physics, electrons in an atom don't "slide" between energy levels. They disappear from one orbit and reappear in another instantly, illustrating a <strong>jump discontinuity</strong> in energy levels.
+        </Accordion>
+
+        <Accordion
+        title="Applications of Infinite Essential Discontinuity: (Click to View)"
+        id="Application_IED"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+       <h3>Applications of Infinite (Essential) Discontinuity</h3>
+    <strong>Radio Frequency Interference:</strong><br>
+    &nbsp;&nbsp;If you move a microphone close to a speaker, you will get a feedback loop. The screech is an <strong>essential discontinuity</strong> in the sound wave.<br><br>
+
+    <strong>Economics and Finance:</strong><br>
+    &nbsp;&nbsp;Infinite growth of an investment or extreme market crashes represent sudden, unbounded changes, modeled as <strong>infinite discontinuities</strong>.<br><br>
+
+    <strong>Physics and Engineering:</strong><br>
+    &nbsp;&nbsp;Electric field strength near a point charge or gravitational potential near a massive object can change abruptly, illustrating <strong>infinite discontinuities</strong>.
+        </Accordion>
+        
+      </HorSection2>
+
+      <HorSection2
+        title="Continuity on an Interval"
+        id="Interval_Con"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+        A function is <strong>continuous over an open interval</strong> if it is continuous at <strong>every point</strong> within that interval.
+
+        <Accordion
+        title="Open Interval: (Click to View)"
+        id="Interval_Cona"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        <strong>Open Interval (a, b):</strong><br>
+        &nbsp;&nbsp;A function is <strong>continuous on (a, b)</strong> if <strong>f(c) = lim x→c f(x)</strong> for every c in (a, b).<br><br>
+        </Accordion>
+
+        <Accordion
+        title="Closed Interval: (Click to View)"
+        id="Interval_Conb"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        <strong>Closed Interval [a, b]:</strong><br>
+        &nbsp;&nbsp;A function is <strong>continuous on [a, b]</strong> if:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;• It is continuous on the open interval (a, b).<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;• It is continuous from the right at a: <strong>lim x→a⁺ f(x) = f(a)</strong>.<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;• It is continuous from the left at b: <strong>lim x→b⁻ f(x) = f(b)</strong>.
+        </Accordion>
+        
+      </HorSection2>
+        <HorSection2
+        title="Examples"
+        id="Interval_Con"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+
+        <Accordion
+        title="Example 1: (Click to View)"
+        id="Interval_Conex1"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        <h3>Example: Interval of Continuity for a Polynomial</h3>
+        Determine the interval over which the function <strong>f(x) = x² − 2x + 4</strong> is continuous.<br><br>
+
+        Since the given function is a <strong>polynomial</strong>, it is defined for <strong>all real numbers</strong>.<br>
+            A polynomial function is said to be <strong>continuous on the interval (-∞, +∞)</strong>.<br>
+
+            <iframe src="https://www.desmos.com/calculator/tokkqp0xtk?embed" 
+        width="600" 
+        height="400" 
+        style="border: 1px solid #ccc;" 
+        ></iframe>
         </Accordion>
 
         <Accordion
         title="Example 2: (Click to View)"
-        id="Example 2: (Click to View)a"
+        id="Interval_Conex2"
         direction="left"
         justifycontent="flex-start"
         fontsize1="2rem"
         fontsize2="1.5rem"
         >
-        2. Solve for x in the equation: 5 • 3x = 45 <br>
-        Solution: <br>
-        Start by dividing both sides by 5: <br>
-        5•3x / 5 = 45 / 5 <br>
-        3x = 9 <br>
-        Next, express 9 as a power of 3: <br>
-        9 = 3² <br>
-        Now the equation becomes: <br>
-        3x = 3² <br>
-        Since the bases are the same, set the exponents equal to each other: <br>
-        x = 2 <br>
-        Result: The value of x is 2. <br><br>
-        </Accordion>
+        <h3>Example: Interval of Continuity for a Rational Function</h3>
+        Determine the interval over which the function <strong>f(x) = (x − 2) / (x + 4)</strong> is continuous.<br><br>
 
-        <Accordion
-        title="The Fractional Exponent: (Click to View)"
-        id="Example 3: (Click to View)a"
-        direction="left"
-        justifycontent="flex-start"
-        fontsize1="2rem"
-        fontsize2="1.5rem"
-        >
-        3. The Fractional Exponent Limit (Radical Form) <br>
-        Problem: lim 9^(x/2), x → 4 <br>
-        Solution: 9^(4/2) = 9² <br>
-        9 × 9 = 81 <br>
-        Since the function is continuous at x = 4, we plug it in: <br>
-        Result: The limit is 81. <br><br>
-        </Accordion>
+        Since the given function is a <strong>rational function</strong>, we must check where the <strong>denominator = 0</strong>.<br>
+        &nbsp;&nbsp;x + 4 = 0 → x = −4<br>
+        At x = −4, the function is <strong>undefined</strong>.<br><br>
 
-        <Accordion
-        title="The Power Function Limit: (Click to View)"
-        id="Example 4: (Click to View)a"
-        direction="left"
-        justifycontent="flex-start"
-        fontsize1="2rem"
-        fontsize2="1.5rem"
-        >
-        4. The Power Function Limit <br>
-        In this case, we have a variable in both the base and the exponent. As long as the base is positive at the limit point, direct substitution remains our best friend. <br>
-        Problem: lim (x - 1)^(x + 1), x → 3 <br>
-        Solution: We substitute x = 3 into both the base and the exponent simultaneously: <br>
-        Base: (3 - 1) = 2 <br>
-        Exponent: (3 + 1) = 4 <br>
-        Now, evaluate the resulting exponential expression: <br>
-        2⁴ = 2 × 2 × 2 × 2 = 16 <br>
-        Result: The limit is 16.
+        Therefore, the function is <strong>continuous everywhere except at x = −4</strong>.<br>
+        The interval of continuity is:<br>
+        &nbsp;&nbsp;(-∞, −4) ∪ (−4, +∞)<br>
+        <iframe src="https://www.desmos.com/calculator/kmcyo8qowr?embed" 
+        width="600" 
+        height="400" 
+        style="border: 1px solid #ccc;" 
+        ></iframe>
         </Accordion>
-
+        
       </HorSection2>
-
-
-      <div class="Spacer"></div>
-
       <HorSection2
 title="Made with ❤ from Scalable!"
 direction="left"
@@ -182,8 +621,8 @@ width="100%"
 >
 <section class="Section-End">
     <div class="NavButtons">
-        <a href="/Scaleculus/" class="PrevBtn">← Homepage</a>
-        <a href="/Scaleculus/Continuity" class="NextBtn">Continuity →</a>
+        <a href="/Scaleculus/Limits" class="PrevBtn">← Limits</a>
+        <a href="/Scaleculus/Slope" class="NextBtn">Slope →</a>
     </div>
 
 </section>

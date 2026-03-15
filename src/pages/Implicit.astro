@@ -83,11 +83,58 @@ import StepList from '../components/StepsElement.astro';
 
       <div class="Spacer"></div>
 
-      <HorSection2 title="Made with ❤ from Scalable!" direction = "left" fontsize1 = "1rem" fontsize2 = "1rem" justifycontent = "flex-start" width = "100%">
-		  <section>
-				:)
-			</section>	
-	    </HorSection2>
+      <HorSection2
+title="Made with ❤ from Scalable!"
+direction="left"
+fontsize1="1rem"
+fontsize2="1rem"
+justifycontent="flex-start"
+width="100%"
+>
+<section class="Section-End">
+    <div class="NavButtons">
+        <a href="/Scaleculus/Limits" class="PrevBtn">← Homepage</a>
+        <a href="/Scaleculus/Slope" class="NextBtn">Continuity →</a>
+    </div>
+
+</section>
+
+<style>
+.Section-End{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+}
+
+.NavButtons{
+    display:flex;
+    justify-content:space-between;
+    margin-top:0.5rem;
+}
+
+.PrevBtn,
+.NextBtn{
+    font-family:"Quicksand", sans-serif;
+    font-size:2rem;
+    text-decoration:none;
+    padding:0.35rem 0.8rem;
+    border-radius:0.4rem;
+
+    color:var(--snow);
+    background:rgba(231,179,255,0.08);
+
+    transition:all 0.2s ease;
+}
+
+.PrevBtn:hover,
+.NextBtn:hover{
+    background:rgba(231,179,255,0.18);
+    box-shadow:0 0 6px rgba(193,142,199,0.4);
+    transform:translateY(-2px);
+}
+</style>
+
+
 
     </main>
   </div>

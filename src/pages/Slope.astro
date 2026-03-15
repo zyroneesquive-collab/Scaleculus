@@ -9,25 +9,18 @@ import StepList from '../components/StepsElement.astro';
 
 <SubLayout title={Topics.Titles[0]}>
 
-  <Sidebar currentPage="Limits"></Sidebar>
+  <Sidebar currentPage="Slope"></Sidebar>
 
   <div class="page-wrapper">
     <!-- TOC -->
     <nav class="toc">
   <ul>
     <li>
-      <a href="#Title_limits">➤ Limits</a>
+      <a href="#Title_Tangent">➤ Tangent Line</a>
       <ul> <!-- nested list for hierarchy -->
-        <li><a href="#Limits_Video">● Video Lesson</a></li>
-        <li><a href="#Limits_Definition">● What are Limits?</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#Title_DS">➤ Direct Substitution</a>
-      <ul>
-        <li><a href="#DS_Expo">● Exponential</a></li>
-        <li><a href="#DS_Trigo">● Trigonometric</a></li>
-        <li><a href="#DS_Log">● Logarithmic</a></li>
+        <li><a href="#Tangent_Video">● Video Lesson</a></li>
+        <li><a href="#Tangent_Definition">● Definition</a></li>
+        <li><a href="#Tangent_Example">● Examples</a></li>
       </ul>
     </li>
   </ul>
@@ -41,8 +34,8 @@ import StepList from '../components/StepsElement.astro';
     <main class="main-content">
       <div class="Spacer"></div>
       <HorSection2
-        title="Limits"
-        id="Title_limits"
+        title="Slope of a Tangent Line"
+        id="Title_Tangent"
         direction="left"
         fontsize1="4rem"
         fontsize2="2rem"
@@ -53,7 +46,7 @@ import StepList from '../components/StepsElement.astro';
 
       <HorSection2
         title="Video Lesson"
-        id="Limits_Video"
+        id="Tangent_Video"
         direction="left"
         fontsize1="4rem"
         fontsize2="2rem"
@@ -64,30 +57,126 @@ import StepList from '../components/StepsElement.astro';
       </HorSection2>
 
       <HorSection2
-        title="What are Limits?"
-        id="Limits_Definition"
+        title="The Tangent Line"
+        id="Tangent_Definition"
         direction="left"
         fontsize1="4rem"
         fontsize2="2rem"
         justifycontent="flex-start"
         width="100%"
       >
-        A limit is a value that a function approaches as the input approaches a certain number. <br>The general form is: <br><br>
-        y = a•bx where: <br><br>
-        •a is a constant (initial value). <br> 
-        •b is the base, and it’s typically a positive real number. <br>
-        •x is the exponent. <br> 
-        Exponential Function: f(x) = a • t <br>
+        <h3>The Tangent Line</h3>
+        The <strong>tangent line</strong> to a curve at a specific point is a straight line that best approximates the <strong>slope of the curve</strong> at that exact point.<br>
+        Unlike a secant line, which passes through two points, the tangent line represents the <strong>instantaneous rate of change</strong>.<br><br>
+
+        To find the slope <strong>m</strong> of the tangent line at a point (x₀, f(x₀)), we use the limit of the slopes of secant lines as x gets closer and closer to x₀:<br>
+        &nbsp;&nbsp;m = lim (x → x₀) [(f(x) - f(x₀)) / (x - x₀)]<br><br>
+
+        <strong>Explanation:</strong><br>
+        &nbsp;&nbsp;<strong>y − y₀:</strong> The vertical distance between a moving point and the fixed point.<br>
+        &nbsp;&nbsp;<strong>x − x₀:</strong> The horizontal distance between them.<br>
+        &nbsp;&nbsp;<strong>The Limit:</strong> As the distance x − x₀ shrinks to zero, the secant line becomes the tangent line.
       </HorSection2>
 
+      <HorSection2
+        title="Example"
+        id="Tangent_Example"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
 
-      <div class="Spacer"></div>
+        <Accordion
+        title="Example 1: (Click to View)"
+        id="Example 1: (Click to View)a"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        <h3>Example: Slope of the Tangent Line</h3>
+    Find the slope of the tangent line to the curve <strong>y = x²</strong> at the point (2, 4).<br><br>
 
-      <HorSection2 title="Made with ❤ from Scalable!" direction = "left" fontsize1 = "1rem" fontsize2 = "1rem" justifycontent = "flex-start" width = "100%">
-		  <section>
-				:)
-			</section>	
-	    </HorSection2>
+    <strong>Step 1: Identify your values</strong><br>
+    &nbsp;&nbsp;x₀ = 2<br>
+    &nbsp;&nbsp;y₀ = 4<br>
+    &nbsp;&nbsp;y = x²<br><br>
+
+    <strong>Step 2: Set up the formula</strong><br>
+    &nbsp;&nbsp;m = lim (x → x₀) [(f(x) - y₀) / (x - x₀)]<br><br>
+
+    <strong>Step 3: Substitute the function for y</strong><br>
+    &nbsp;&nbsp;m = lim (x → 2) [(x² - 4) / (x - 2)]<br><br>
+
+    <strong>Step 4: Factor the numerator</strong><br>
+    &nbsp;&nbsp;m = lim (x → 2) [((x - 2)(x + 2)) / (x - 2)]<br><br>
+
+    <strong>Step 5: Cancel the common factor</strong><br>
+    &nbsp;&nbsp;m = lim (x → 2) (x + 2)<br><br>
+
+    <strong>Step 6: Evaluate the limit</strong><br>
+    &nbsp;&nbsp;m = 2 + 2 = 4<br><br>
+
+    <strong>Answer:</strong><br>
+    &nbsp;&nbsp;The slope of the tangent line at (2, 4) is <strong>4</strong>.
+        </Accordion>
+
+      </HorSection2>
+
+      <HorSection2
+title="Made with ❤ from Scalable!"
+direction="left"
+fontsize1="1rem"
+fontsize2="1rem"
+justifycontent="flex-start"
+width="100%"
+>
+<section class="Section-End">
+    <div class="NavButtons">
+        <a href="/Scaleculus/Continuity" class="PrevBtn">← Continuity</a>
+        <a href="/Scaleculus/Differentiation" class="NextBtn">Differentiation →</a>
+    </div>
+
+</section>
+
+<style>
+.Section-End{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+}
+
+.NavButtons{
+    display:flex;
+    justify-content:space-between;
+    margin-top:0.5rem;
+}
+
+.PrevBtn,
+.NextBtn{
+    font-family:"Quicksand", sans-serif;
+    font-size:2rem;
+    text-decoration:none;
+    padding:0.35rem 0.8rem;
+    border-radius:0.4rem;
+
+    color:var(--snow);
+    background:rgba(231,179,255,0.08);
+
+    transition:all 0.2s ease;
+}
+
+.PrevBtn:hover,
+.NextBtn:hover{
+    background:rgba(231,179,255,0.18);
+    box-shadow:0 0 6px rgba(193,142,199,0.4);
+    transform:translateY(-2px);
+}
+</style>
+
+
 
     </main>
   </div>
