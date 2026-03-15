@@ -813,28 +813,170 @@ import StepList from '../components/StepsElement.astro';
         </Accordion>
       </HorSection2>
 
-      <div class="Spacer"></div>
+      <HorSection2
+        title="Limits of Graph"
+        id="Title_Graph"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
 
-    
+       Definition: A limit using a graph is the value that a function approaches as x gets closer to a certain number on the graph.<br>
+      To find the limit, observe the y-values as x approaches the point from the left and from the right.<br>
+      If both sides approach the same y-value, the limit exists.<br>
+      If they approach different values, the limit does not exist (DNE).<br>
 
-
-      <Accordion
-        title="Limits (click me)"
-        id="Limits"
+        <Accordion
+        title="Example 1: (Click to View)"
+        id="Example 1: (Click to View)h"
         direction="left"
         justifycontent="flex-start"
         fontsize1="2rem"
         fontsize2="1.5rem"
-      >
-        yes this is some info
+        >
+        1. Problem: Find the lim (2x² - 4)/(x - 2) as x → 2 using the following graph: <br>
+        Solution: Check the value at 2 from the left, and 2 from the right <br>
+        The graph values are both approaching 2, so the limit is 2. <br>
+        Note: Limit is found on the y-axis. <br>
+        Result: The lim (2x² - 4)/(x - 2) as x → 2 is 2. <br><br>
+
+        <iframe 
+    src="https://www.desmos.com/calculator/08jarbpeyx?embed" 
+    width="600" 
+    height="400" 
+    style="border: 1px solid #ccc;" 
+    title="Graph of (2x^2 - 4)/(x - 2)">
+</iframe>
+       </Accordion>
+        <Accordion
+        title="Example 2: (Click to View)"
+        id="Example 2: (Click to View)h"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        2. Problem: Find the lim |x - 2| / (x - 2) as x → 2 using the following graph: <br>
+    Solution: Check the value at 2 from the left, and 2 from the right <br>
+    To the left of 2 = -1 <br>
+    To the right of 2 = 1 <br>
+    Note: Limit is found on the y-axis <br>
+    Result: Both sides are not approaching the same number, so the limit is DNE. <br>
+            <iframe 
+    src="https://www.desmos.com/calculator/ryjotgxvav?embed" 
+    width="600" 
+    height="400" 
+    style="border: 1px solid #ccc;" 
+    title="Graph of |x-2|/(x-2)">
+      </iframe>
+
+      </Accordion>
+                <Accordion
+        title="Example 3: (Click to View)"
+        id="Example 3: (Click to View)h"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        Problem 3: <br>
+        lim x → π/2 of y = cot(x) <br>
+        As x gets close to π/2, the graph of y = cot(x) approaches 0. <br>
+        The curve is smooth near π/2 and crosses the x-axis at that point, indicating that the limit is 0. <br>
+        Result: The limit is 0. <br><br>
+            
+        <iframe 
+    src="https://www.desmos.com/calculator/3pgcjzmkuh?embed" 
+    width="600" 
+    height="400" 
+    style="border: 1px solid #ccc;" 
+    title="Graph of |x-2|/(x-2)">
+      </iframe>
+
+      </Accordion>
+       <Accordion
+        title="Example 4: (Click to View)"
+        id="Example 4: (Click to View)h"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        Problem 4: <br>
+        lim x → π/2 of sin(x) cos(x - π/6) <br>
+        When evaluating the limit of a trigonometric function, we start by substituting the value that the variable approaches. <br>
+        As long as this substitution does not make the expression undefined, the limit equals the value of the function. <br>
+        Substitute x = π/2: <br>
+        sin(π/2) cos(π/2 - π/6) <br>
+        sin(π/2) cos(π/3) <br>
+        1 × 1/2 = 1/2 <br>
+        Result: The limit is 1/2. <br>
+      <iframe
+    src="https://www.desmos.com/calculator/vbptgdxf9t?embed" 
+    width="600" 
+    height="400" 
+    style="border: 1px solid #ccc;" 
+    title="Graph of |x-2|/(x-2)">
+      </iframe>
+
       </Accordion>
 
+      </HorSection2>
 
-      <HorSection2 title="Made with ❤ from Scalable!" direction = "left" fontsize1 = "1rem" fontsize2 = "1rem" justifycontent = "flex-start" width = "100%">
-		  <section>
-				:)
-			</section>	
-	    </HorSection2>
+      <HorSection2
+title="Made with ❤ from Scalable!"
+direction="left"
+fontsize1="1rem"
+fontsize2="1rem"
+justifycontent="flex-start"
+width="100%"
+>
+<section class="Section-End">
+    <div class="NavButtons">
+        <a href="/Scaleculus/" class="PrevBtn">← Homepage</a>
+        <a href="/Scaleculus/Continuity" class="NextBtn">Continuity →</a>
+    </div>
+
+</section>
+
+<style>
+.Section-End{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+}
+
+.NavButtons{
+    display:flex;
+    justify-content:space-between;
+    margin-top:0.5rem;
+}
+
+.PrevBtn,
+.NextBtn{
+    font-family:"Quicksand", sans-serif;
+    font-size:2rem;
+    text-decoration:none;
+    padding:0.35rem 0.8rem;
+    border-radius:0.4rem;
+
+    color:var(--snow);
+    background:rgba(231,179,255,0.08);
+
+    transition:all 0.2s ease;
+}
+
+.PrevBtn:hover,
+.NextBtn:hover{
+    background:rgba(231,179,255,0.18);
+    box-shadow:0 0 6px rgba(193,142,199,0.4);
+    transform:translateY(-2px);
+}
+</style>
+
+</HorSection2>
 
     </main>
   </div>
