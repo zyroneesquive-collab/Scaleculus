@@ -2,11 +2,17 @@
 import Topics from "../data/topics.json";
 import SubLayout from "../layouts/sub_layout.astro";
 import Lesson from "../content/lesson_text/limits.mdx";
+import Sidebar from '../components/Sidebar.astro';
 ---
 
 <SubLayout title={Topics.Titles[0]}>
- <main class="sl-dark">
-  <Lesson />
+  <Sidebar currentPage="Homepage">
+	</Sidebar>
+
+ <main class="sl-dark Main-Content">
+  <div class="starlight-container">
+    <Lesson />
+  </div>
 </main>
 </SubLayout>
 

@@ -5,6 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 import markdoc from '@astrojs/markdoc';
 
+import mdx from '@astrojs/mdx';
+
 // https://astro.build/config
 export default defineConfig({
   base: '/Scaleculus',
@@ -16,5 +18,5 @@ export default defineConfig({
         // Relative path to your custom CSS file
         './src/styles/global.css',
       ],
-    })],
+    }), mdx()],
 });
