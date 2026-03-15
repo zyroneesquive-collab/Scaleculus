@@ -1,0 +1,132 @@
+---
+const { direction, title, fontsize1, fontsize2, justifycontent, width, height, id } = Astro.props;
+---
+
+<div class="AccordionWrapper" style={`
+  --direction: ${direction};
+  --fontsize1: ${fontsize1};
+  --fontsize2: ${fontsize2};
+  --justifycontent: ${justifycontent};
+  --width: ${width};
+  --height: ${height};
+`}>
+
+<button class="AccordionBtn" onclick={`toggleAccordion('${id}')`}>
+
+  <span class="Title">
+    <img src="/Scaleculus/icons/arrow-right.png" id={`icon-${id}`} class="Icon"/>
+    {title}
+  </span>
+
+</button>
+
+<div id={id} class="Panel">
+  <div class="PanelContent">
+    <slot />
+  </div>
+</div>
+
+</div>
+
+
+<style>
+
+.AccordionWrapper{
+  width: var(--width);
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  z-index:1;
+}
+
+.AccordionBtn{
+  width:100%;
+  cursor:pointer;
+
+  /* INVERTED COLORS: dark button, light text */
+  background: rgba(210, 171, 255, 0.95);
+  backdrop-filter: blur(20px);
+
+  border:none;
+  border-radius:1rem;
+
+  padding:1rem 1.5rem;
+
+  display:flex;
+  align-items:center;
+  justify-content: var(--justifycontent);
+
+  font-family:"Quicksand", sans-serif;
+  font-size: var(--fontsize1);
+  font-weight:700;
+
+  color: rgb(50,10,90); /* darker text for contrast */
+
+  box-shadow:
+  0rem 0rem 0.25rem 0.01rem rgba(193,142,199,0.6);
+
+  transition: all 0.3s ease;
+}
+
+.AccordionBtn:hover{
+  box-shadow:
+  0 0 8px rgba(190,173,220,0.8);
+}
+
+.Title{
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+}
+
+.Icon{
+  width:1.2rem;
+  transition: transform 0.3s ease;
+  filter: invert(0) drop-shadow(2px 2px 6px rgba(50,10,90,0.6)); /* darker shadow for visibility */
+}
+
+.Panel{
+  max-height:0;
+  overflow:hidden;
+
+  transition:max-height 0.35s ease;
+
+  /* INVERTED COLORS: lighter panel */
+  background: rgb(190, 173, 220);
+  z-index: 4;
+  border-radius:0.5rem;
+}
+
+.PanelContent{
+  padding:1rem;
+
+  font-family:"Quicksand", sans-serif;
+  font-size: var(--fontsize2);
+  color: rgb(17, 3, 31); /* darker text */
+
+  line-height:1.6;
+
+  min-height:80px;
+}
+
+</style>
+
+<script is:inline>
+
+function toggleAccordion(id){
+
+  const panel = document.getElementById(id);
+  const icon = document.getElementById("icon-" + id);
+
+  if(!panel || !icon) return;
+
+  if(panel.style.maxHeight){
+      panel.style.maxHeight = null;
+      icon.style.transform = "rotate(0deg)";
+  }else{
+      panel.style.maxHeight = panel.scrollHeight + "px";
+      icon.style.transform = "rotate(90deg)";
+  }
+
+}
+
+</script>
