@@ -12,10 +12,21 @@ const { isOpen = false, currentPage = "" } = Astro.props;
         <nav>
             <a href="/Scaleculus/" class={currentPage === "Homepage" ? "active" : ""}>Homepage</a>
             <a href="/Scaleculus/Limits/" class={currentPage === "Limits" ? "active" : ""}>Limits</a>
-            <a href="/Scaleculus/continuity/" class={currentPage === "continuity" ? "active" : ""}>Continuity</a>
-            <a href="/Scaleculus/derivatives/" class={currentPage === "derivatives" ? "active" : ""}>Derivatives</a>
-            <a href="/Scaleculus/chain-rule/" class={currentPage === "chain" ? "active" : ""}>Chain Rule</a>
-            <a href="/Scaleculus/about/" class={currentPage === "about" ? "active" : ""}>About</a>
+            <a href="/Scaleculus/Continuity/" class={currentPage === "Continuity" ? "active" : ""}>Continuity</a>
+            <a href="/Scaleculus/Slope/" class={currentPage === "Slope" ? "active" : ""}>Slope</a>
+            <a href="/Scaleculus/Differentiation/" class={currentPage === "Differentiation" ? "active" : ""}>Differentiation</a>
+            <a href="/Scaleculus/ChainImplicit/" class={currentPage === "Chain Rule and Implicit" ? "active" : ""}>Chain Rule and Implicit</a>
+
+            <div class="Divider"></div>
+
+            <a href="/Scaleculus/VideosLessons/" class={currentPage === "VideosLessons" ? "active" : ""}>Videos Lessons</a>
+            <a href="/Scaleculus/Games/" class={currentPage === "Games" ? "active" : ""}>Games</a>
+            <a href="/Scaleculus/Tests/" class={currentPage === "Tests" ? "active" : ""}>Tests</a>
+
+            <div class="Divider"></div>
+
+            <a href="/Scaleculus/About/" class={currentPage === "About" ? "active" : ""}>About Us</a>
+            
         </nav>
     </div>
 </div>
@@ -104,6 +115,8 @@ const { isOpen = false, currentPage = "" } = Astro.props;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     transition: background 0.2s, color 0.2s;
+
+    white-space: nowrap;   /* prevents wrapping */
 }
 
 .Sidebar-Content a:hover {
@@ -121,6 +134,21 @@ const { isOpen = false, currentPage = "" } = Astro.props;
     margin-left: 18rem;
     transition: margin-left 0.3s ease;
 }
+
+.Divider {
+    height: 2px;
+    width: 85%;
+    margin: 0.8rem auto;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--wisteria),
+        transparent
+    );
+    border-radius: 999px;
+    opacity: 0.7;
+}
+
 </style>
 
 <script type="module">

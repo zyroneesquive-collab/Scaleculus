@@ -3,7 +3,8 @@ const { title = "Scaleculus"} = Astro.props;
 ---
 
 <div id="MiniHeader">
-  <section class="MiniHeader-Text">{title}</section>
+  <img id = "AnimatedLogo" src="/Scaleculus/logo/AnimatedLogo.gif">
+  <section class="MiniHeader-Text"></section>
 </div>
 
 <style>
@@ -13,6 +14,18 @@ const { title = "Scaleculus"} = Astro.props;
   --amethyst-smoke: #C18EC7ff;
   --snow: #F8EEEDff;
 }
+
+#AnimatedLogo {
+        position: absolute;
+        width: 12vw;
+        height: auto;
+
+        pointer-events: none;
+        user-select: none; 
+        z-index: 10;
+
+        transition: all 0.5s ease;
+    }
 
 #MiniHeader {
   position: fixed;

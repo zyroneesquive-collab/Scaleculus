@@ -4,9 +4,9 @@
 
 <main id = "TopHeader">
     <header id = "Header">
-        <section class="Header-Text">
-           Scaleculus                      
+        <section class="Header-Text">                     
         </section>
+        <img id = "AnimatedLogo" src="/Scaleculus/logo/AnimatedLogo.gif">
         <section id = "Slogan">
             
         </section>
@@ -15,7 +15,7 @@
         <div class="Design-Wrapper">
             <div id = "Design-Container">
             <img id = "Mascot" src = "/Scaleculus/logo/Mascot.png">
-            <img class = "Header-Design" src = "/Scaleculus/logo/SubLogo.png" style="top: 35vh; left: 70vw; width:70vh; height:auto;">
+            <img class = "Header-Design" src = "/Scaleculus/logo/SubLogo.png" style="top: 45vh; left: 70vw; width:30vh; height:auto;">
             </div>
         </div>
         
@@ -141,7 +141,7 @@
         
         height: 2vh;
         width: 46vw;
-        
+        top: 10vw;
         letter-spacing: 0.1vw;
         
         transition: all 0.5s ease;
@@ -163,7 +163,7 @@
     .Line {
         position: absolute;
 
-        bottom: 25vh;
+        bottom: 15vh;
         left: 50%;
         transform: translateX(-50%);
 
@@ -191,7 +191,7 @@
         height: 1vh;
         width: 30vw;
         
-        top: 25vh;
+        top: 38vh;
         
         letter-spacing: 0.1vw;
         
@@ -215,6 +215,18 @@
         50% { color: black; }
         75% { color: var(--snow); }
         100% { color: black; }
+    }
+
+    #AnimatedLogo {
+        position: absolute;
+        width: 65vw;
+        height: auto;
+
+        pointer-events: none;
+        user-select: none; 
+        z-index: 10;
+
+        transition: all 0.5s ease;
     }
 
     #Background {
@@ -244,8 +256,8 @@
     user-select: none; 
 
     top: 60vh;
-    left: 15vw;
-    width: 20vw;
+    left: 20vw;
+    width: 8vw;
     height: auto;
 
     transform: rotate(20deg);
@@ -374,10 +386,9 @@
     window.onscroll = function() {scrollFunction()};
     
     const Header = document.getElementById('Header');
-    const HeaderText = document.querySelector('.Header-Text');
     const Spacer = document.getElementById('Header-Spacer');
     const Stars = document.querySelector('.Stars-Container');
-
+    const Logo = document.getElementById('AnimatedLogo');
     const BottomText = document.getElementById('Bottom-Start');
 
     const DesignContainer = document.querySelector('.Design-Wrapper');
@@ -388,11 +399,9 @@ function scrollFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     Header.style.height = "5vh";
 
-    HeaderText.style.fontWeight = "100";
-    HeaderText.style.fontSize  = "1vw";
-    HeaderText.style.letterSpacing = "0.2vw";
-
     Spacer.style.height = "50vh";
+
+    Logo.style.width = "12vw"
 
     Slogan.style.opacity = "0";
     Slogan.style.maxHeight = '0';
@@ -408,11 +417,9 @@ function scrollFunction() {
   } else {
     Header.style.height = "100vh";
 
-    HeaderText.style.fontWeight = "500";
-    HeaderText.style.fontSize = "8vw";
-    HeaderText.style.letterSpacing = "3vw";
-
     Spacer.style.height = "100vh";
+
+    Logo.style.width = "65vw"
 
     Slogan.style.opacity = "1";
     Slogan.style.maxHeight = "2vh";   
@@ -447,4 +454,3 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 </script>
-

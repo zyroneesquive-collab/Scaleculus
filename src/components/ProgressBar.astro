@@ -1,0 +1,107 @@
+---
+interface Section {
+  id: string;
+  title: string;
+}
+
+// Proper typing for Astro props
+const { sections } = Astro.props as { sections: Section[] };
+---
+
+<nav class="ProgressBar">
+  {sections.map((section, idx) => (
+    <div class="ProgressItemWrapper">
+      <a class="ProgressItem" href={`#${section.id}`} data-id={section.id}>
+        {section.title}
+      </a>
+      {idx < sections.length - 1 ? <div class="ProgressLine"></div> : null}
+    </div>
+  ))}
+</nav>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+
+.ProgressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: rgba(20, 21, 39, 0.9);
+  padding: 1rem;
+  border-right: 0.2rem solid #C493DA;
+  z-index: 3;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+}
+
+.ProgressItemWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.ProgressItem {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ProgressItem.active {
+  color: #C493DA;
+  font-weight: 700;
+}
+
+.ProgressLine {
+  width: 2px;
+  height: 2rem;
+  background-color: #C493DA;
+  margin: 0.2rem 0;
+  opacity: 0.6;
+}
+</style>
+
+<script is:inline>
+const items = Array.from(document.querySelectorAll('.ProgressItem'));
+
+function handleScroll() {
+  const scrollPos = window.scrollY + window.innerHeight / 2;
+
+  items.forEach(item => {
+    const section = document.getElementById(item.dataset.id);
+    if (!section) return;
+    const top = section.offsetTop;
+    const bottom = top + section.offsetHeight;
+
+    if (scrollPos >= top && scrollPos <= bottom) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', handleScroll);
+handleScroll();
+
+// Smooth scroll on click
+items.forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    const section = document.getElementById(item.dataset.id);
+    if (!section) return;
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>

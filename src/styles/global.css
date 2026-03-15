@@ -1,0 +1,130 @@
+/* ---------- Scaleculus Color Variables ---------- */
+:root {
+  --wisteria: rgb(190, 173, 220);
+  --shadow-grey: rgb(20, 21, 39);
+  --petal-frost: #F7D3EB;
+  --thistle: #D7BCE4;
+  --wisteria-2: #C493DA;
+  --amethyst-smoke: #C18EC7;
+  --snow: #F8EEED;
+}
+
+/* ---------- Body / Global ---------- */
+body {
+  background-color: var(--shadow-grey);
+  font-family: "Quicksand", sans-serif;
+  color: var(--snow);
+}
+
+/* ---------- Markdown Cards ---------- */
+.sl-dark .sl-markdown-content {
+  background: rgba(20,21,39,0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 0 0.25rem 0.01rem rgba(193,142,199,0.3);
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.6;
+  color: var(--snow) !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Force all child elements to inherit color */
+.sl-dark .sl-markdown-content * {
+  color: var(--snow) !important;
+  font-family: "Quicksand", sans-serif !important;
+  z-index: 1;
+}
+
+/* ---------- Headings ---------- */
+.sl-dark .sl-markdown-content h1,
+.sl-dark .sl-markdown-content h2,
+.sl-dark .sl-markdown-content h3,
+.sl-dark .sl-markdown-content h4,
+.sl-dark .sl-markdown-content h5,
+.sl-dark .sl-markdown-content h6 {
+  text-shadow: 0 0 3px rgba(190,173,220,0.4);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Optional arrow before headings */
+.sl-dark .sl-markdown-content h1::before,
+.sl-dark .sl-markdown-content h2::before,
+.sl-dark .sl-markdown-content h3::before {
+  content: "▸ ";
+  color: var(--wisteria);
+}
+
+/* ---------- Links ---------- */
+.sl-dark .sl-markdown-content a {
+  color: var(--wisteria);
+  text-decoration: underline;
+}
+
+/* ---------- Code Blocks ---------- */
+.sl-dark .sl-markdown-content pre,
+.sl-dark .sl-markdown-content code {
+  background: rgba(20,21,39,0.4);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(193,142,199,0.3);
+  padding: 0.5rem;
+  color: var(--snow);
+  font-family: "Quicksand", sans-serif;
+}
+
+/* Inline code */
+.sl-dark .sl-markdown-content code:not(pre code) {
+  background: rgba(20,21,39,0.25);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+}
+
+/* ---------- Lists ---------- */
+.sl-dark .sl-markdown-content ul,
+.sl-dark .sl-markdown-content ol {
+  margin-left: 1.5rem;
+}
+
+/* ---------- Tables ---------- */
+.sl-dark .sl-markdown-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.sl-dark .sl-markdown-content th,
+.sl-dark .sl-markdown-content td {
+  border: 1px solid rgba(193,142,199,0.3);
+  padding: 0.5rem;
+  color: var(--snow);
+}
+
+/* ---------- Steps Component ---------- */
+.sl-dark .sl-steps {
+  background: rgba(20,21,39,0.05);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  font-family: "Quicksand", sans-serif;
+  color: var(--snow);
+  box-shadow: 0 0 0.25rem 0.01rem rgba(193,142,199,0.3);
+  z-index: 1;
+}
+
+.sl-dark .sl-steps li {
+  margin-bottom: 0.5rem;
+  color: var(--snow);
+}
+
+.sl-dark .sl-steps li::marker {
+  color: var(--wisteria-2);
+  font-weight: bold;
+}
+
+.sl-dark .sl-steps a {
+  color: var(--wisteria);
+  text-decoration: underline;
+}
+
