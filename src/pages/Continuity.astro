@@ -16,10 +16,11 @@ import StepList from '../components/StepsElement.astro';
     <nav class="toc">
   <ul>
     <li>
-      <a href="#Title_limits">➤ Limits</a>
+      <a href="#Title_Continuity">➤ Continuity</a>
       <ul> <!-- nested list for hierarchy -->
-        <li><a href="#Limits_Video">● Video Lesson</a></li>
-        <li><a href="#Limits_Definition">● What are Limits?</a></li>
+        <li><a href="#Continuity_Video">● Video Lesson</a></li>
+        <li><a href="#Continuity_Definition">● What is Continuity?</a></li>
+        <li><a href="#Discontinuity_Definition">● What is Discontinuity?</a></li>
       </ul>
     </li>
     <li>
@@ -78,6 +79,94 @@ import StepList from '../components/StepsElement.astro';
         •b is the base, and it’s typically a positive real number. <br>
         •x is the exponent. <br> 
         Exponential Function: f(x) = a • t <br>
+      </HorSection2>
+
+      <HorSection2
+        title="Direct Substitution with Exponential Functions"
+        id="DS_Expo"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+        Direct substitution with exponential functions is a method for evaluating limits by plugging the value that x approaches directly into the function. <br><br>
+        If the base of the exponential function is positive and the function is continuous at that point, the limit can be found simply by substitution. <br><br>
+
+        <Accordion
+        title="Example 1: (Click to View)"
+        id="Example 1: (Click to View)a"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        1. Solve for x in the equation: 2x = 8 <br>
+        Solution: We need to express both sides of the equation with the same base. <br>
+        Since 8 = 2³, we can rewrite the equation as: <br>
+        2x = 2³ <br>
+        Now that both sides have the same base, we set the exponents equal to each other: <br>
+        x = 3 <br>
+        Result: The value of x is 3. <br><br>
+        </Accordion>
+
+        <Accordion
+        title="Example 2: (Click to View)"
+        id="Example 2: (Click to View)a"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        2. Solve for x in the equation: 5 • 3x = 45 <br>
+        Solution: <br>
+        Start by dividing both sides by 5: <br>
+        5•3x / 5 = 45 / 5 <br>
+        3x = 9 <br>
+        Next, express 9 as a power of 3: <br>
+        9 = 3² <br>
+        Now the equation becomes: <br>
+        3x = 3² <br>
+        Since the bases are the same, set the exponents equal to each other: <br>
+        x = 2 <br>
+        Result: The value of x is 2. <br><br>
+        </Accordion>
+
+        <Accordion
+        title="The Fractional Exponent: (Click to View)"
+        id="Example 3: (Click to View)a"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        3. The Fractional Exponent Limit (Radical Form) <br>
+        Problem: lim 9^(x/2), x → 4 <br>
+        Solution: 9^(4/2) = 9² <br>
+        9 × 9 = 81 <br>
+        Since the function is continuous at x = 4, we plug it in: <br>
+        Result: The limit is 81. <br><br>
+        </Accordion>
+
+        <Accordion
+        title="The Power Function Limit: (Click to View)"
+        id="Example 4: (Click to View)a"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        4. The Power Function Limit <br>
+        In this case, we have a variable in both the base and the exponent. As long as the base is positive at the limit point, direct substitution remains our best friend. <br>
+        Problem: lim (x - 1)^(x + 1), x → 3 <br>
+        Solution: We substitute x = 3 into both the base and the exponent simultaneously: <br>
+        Base: (3 - 1) = 2 <br>
+        Exponent: (3 + 1) = 4 <br>
+        Now, evaluate the resulting exponential expression: <br>
+        2⁴ = 2 × 2 × 2 × 2 = 16 <br>
+        Result: The limit is 16.
+        </Accordion>
+
       </HorSection2>
 
 
