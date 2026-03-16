@@ -1,0 +1,81 @@
+---
+const { name, src, width = "20rem", height = "30rem" } = Astro.props;
+---
+
+<main class="Person_Card" style={`
+    --card-width: ${width};
+    --card-height: ${height};
+`}>
+    <section class="Image_Container">
+        <img src={src} alt={name} class="Person_Image" />
+    </section>
+
+    <section class="Name_Container">
+        <span class="Person_Name">{name}</span>
+    </section>
+</main>
+
+<style>
+:root {
+    --wisteria: rgb(190, 173, 220);
+    --snow: #F8EEEDff;
+    --shadow-grey: rgb(20, 21, 39);
+}
+
+.Person_Card {
+    width: var(--card-width);
+    height: var(--card-height);
+    background-color: rgba(20, 21, 39, 0.5);
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 0.1rem solid var(--wisteria);
+    box-shadow: 0 0 1rem 0.05rem var(--wisteria);
+    color: var(--snow);
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Person_Card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0 1.5rem 0.1rem var(--wisteria);
+}
+
+.Image_Container {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.Person_Image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.Name_Container {
+    width: 100%;
+    text-align: center;
+}
+
+.Person_Name {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--snow);
+    text-shadow: 0 0 5px rgba(190, 173, 220, 0.6),
+                 0 0 10px rgba(193, 142, 199, 0.4);
+}
+</style>
