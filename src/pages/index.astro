@@ -8,8 +8,7 @@ import HorSection2 from "../components/Hor-Section2.astro";
 import Sidebar from '../components/Sidebar.astro';
 import { Button } from 'free-astro-components';
 
-
-import { Accordion, AccordionItem } from 'free-astro-components'
+import Accordion from "../components/Accordion.astro";
 
 ---
 
@@ -49,43 +48,58 @@ import { Accordion, AccordionItem } from 'free-astro-components'
 					
 				</SectionElement>
 				</a>
+				<a href="/Scaleculus/Games/">
 				<SectionElement title = "Play games 🖳" direction = "left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" height = "20rem" width = "30rem">
 					<section>
 						Learn while having fun.
 					</section>
 				</SectionElement>
-		
-				<SectionElement title = "Test yourself ✎ " direction = "left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" height = "20rem" width = "30rem">
+				</a>
+
+				<a href="/Scaleculus/About/">
+				<SectionElement title = "About Us ✎ " direction = "left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" height = "20rem" width = "30rem">
 					<section>
-						Test your skills and grow.
+						Learn more about this Website
 					</section>
 				</SectionElement>
+				</a>
 			</section>
 		</HorSection2>
-	
+		
 		<HorSection2 title = "Lessons" direction = "center" fontsize1 = "3rem" fontsize2 = "1.5rem" justifycontent = "center" width = "100%" height = "70vh">
 			<section class = "Section-con">
-			<HorSection2 title = "Limits" direction = "Left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" justifycontent = "flex-start" width = "30%" height = "30vh">
+
+			<a href="/Scaleculus/Limits/" >
+			<HorSection2 title = "Limits" direction = "Left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" justifycontent = "flex-start" width = "40rem" height = "30vh">
 					A value that a function approaches as the input approaches a certain number. 
 			</HorSection2>
+			</a>
 
-			<HorSection2 title = "Continuity" direction = "Left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" justifycontent = "flex-start" width = "30%" height = "30vh">
+			<a href="/Scaleculus/Continuity/" >
+			<HorSection2 title = "Continuity" direction = "Left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" justifycontent = "flex-start" width = "40rem" height = "30vh">
 					A function is said to be continuous in a given interval if there is no break in the graph of the function in the entire interval range.
 			</HorSection2>
+			</a>
 
-			<HorSection2 title = "Slope of a Tangent Line" direction = "Left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" justifycontent = "flex-start" width = "30%" height = "30vh">
+			<a href="/Scaleculus/Slope/" >
+			<HorSection2 title = "Slope of a Tangent Line" direction = "Left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" justifycontent = "flex-start" width = "40rem" height = "30vh">
 					It is the instantaneous rate of change of a function.
 			</HorSection2>
+			</a>
 
-			<HorSection2 title = "Differentiation Rules of Algebraic Expressions" direction = "Left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" justifycontent = "flex-start" width = "30%" height = "30vh">
+			<a href="/Scaleculus/Differentiation/" >
+			<HorSection2 title = "Differentiation Rules of Algebraic Expressions" direction = "Left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" justifycontent = "flex-start" width = "40rem" height = "30vh">
 					The process of finding the derivative of algebraic functions.
-			</HorSection2>
-			
-			<HorSection2 title = "Chain Rule and Implicit Differentiation" direction = "Left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" justifycontent = "flex-start" width = "30%" height = "30vh">
+			</HorSection2>	
+			</a>
+
+			<a href="/Scaleculus/Differentiation/" >
+			<HorSection2 title = "Chain Rule and Implicit Differentiation" direction = "Left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" justifycontent = "flex-start" width = "40rem" height = "30vh">
 					Used to differentiate composite functions.
 			</HorSection2>
+			</a>
 
-			<HorSection2 title = "What is Calculus?      " direction = "Left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" justifycontent = "flex-start" width = "30%" height = "30vh">
+			<HorSection2 title = "What is Calculus?" direction = "Left" fontsize1 = "2.5rem" fontsize2 = "1.5rem" justifycontent = "flex-start" width = "40rem" height = "30vh">
 					A branch of mathematics that studies continuous change and motion using limits and derivatives.
 			</HorSection2>
 
@@ -95,7 +109,101 @@ import { Accordion, AccordionItem } from 'free-astro-components'
 		<HorSection2 title = "About Us" direction = "center" fontsize1 = "3rem" fontsize2 = "2rem" justifycontent = "center" width = "100%" height = "10vh">
 			Scaleculus. The educational website where Grade 11 Calculus is made simple and fun.
 		</HorSection2>
+		<HorSection2 title = "Frequently Asked Questions (FAQs)" direction = "center" fontsize1 = "3rem" fontsize2 = "2rem" justifycontent = "center" width = "100%" height = "10vh">
+			Common Questions<br><br>
+			<Accordion
+        title="What is Scaleculus?"
+        id="What is Scaleculus?"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+		width = "99%"
+		height = "auto"
+        >
+        Scaleculus is an interactive learning website for students to explore calculus concepts.<br>
+        </Accordion>
 
+		<Accordion
+        title="How do I navigate the website?"
+        id="How do I navigate the website?"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+		width = "99%"
+		height = "auto"
+        >
+        Use the Home Button, table of contents, and links on each page to access lessons, exercises, and games.<br>
+        </Accordion>
+
+		<Accordion
+        title="What are the different calculus topics covered?"
+        id="What are the different calculus topics covered?"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+		width = "99%"
+		height = "auto"
+        >
+        The website covers limits, derivatives, chain rule, implicit differentiation and related problem-solving exercises<br>
+        </Accordion>
+
+		<Accordion
+        title="How can I track my learning progress?"
+        id="How can I track my learning progress?"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+		width = "99%"
+		height = "auto"
+        >
+        Keep notes of completed lessons and scores from the games to monitor your improvement.<br>
+        </Accordion>
+
+		<Accordion
+        title="Can I access the website on mobile devices?"
+        id="Can I access the website on mobile devices?"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+		width = "99%"
+		height = "auto"
+        >
+        Yes, but the website is primarily design for larger monitor viewing use computers.<br>
+        </Accordion>
+
+		<Accordion
+        title="Is my data private when using the website?"
+        id="Is my data private when using the website?"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+		width = "99%"
+		height = "auto"
+        >
+        Yes, the website does not collect personal data beyond basic usage analytics for improving the site.<br>
+        </Accordion>
+
+		<Accordion
+        title="Can I suggest topics or improvements for the site?"
+        id="Can I suggest topics or improvements for the site?"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+		width = "99%"
+		height = "auto"
+        >
+        Yes, suggestions are welcome through the contact form or email.<br>
+        </Accordion>
+
+		</HorSection2>
+		
 	
 </MainLayout>
 
@@ -113,6 +221,8 @@ import { Accordion, AccordionItem } from 'free-astro-components'
     --amethyst-smoke: #C18EC7ff;
     --snow: #F8EEEDff;
     }
+
+	
 
 	.Section-con {
 		display: flex;

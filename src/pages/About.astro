@@ -2,39 +2,125 @@
 import Topics from "../data/topics.json";
 
 import SubLayout from "../layouts/sub_layout.astro";
-import SectionElement from "../components/SectionElement.astro";
 import HorizontalSection from "../components/HorizontalSection.astro";
-import HorSection2 from "../components/Hor-Section2.astro";
+import Accordion from "../components/Accordion.astro";
 import Sidebar from '../components/Sidebar.astro';
-import { Button } from 'free-astro-components';
-
-import { Accordion, AccordionItem } from 'free-astro-components';
 ---
 
 <SubLayout>
-  <Sidebar currentPage="Games"></Sidebar>
+  <Sidebar currentPage="About" />
 
-  <HorizontalSection title="Play and Have Fun" direction="left" fontsize1="3rem" fontsize2="1.25rem" justifycontent="flex-start" width="100%">
-    <section>
-      Scaleculus makes learning calculus fun! Explore lessons on Limits, Continuity, Tangent Lines, Differentiation, and the Chain Rule.<br /><br />
-      Play interactive games in our Arcade while practicing what you learn!
-    </section>
+  <div class="Spacer"></div>
+
+  <HorizontalSection title="About this Site:" direction="left" fontsize1="3rem" fontsize2="2rem" justifycontent="center" width="100%">
+    Scaleculus is a student-built, non-profit platform made for learners by learners.<br>
+    It offers one of the most interactive ways for Grade 11 students to master calculus concepts.<br>
+    With engaging lessons and fun educational games, Scaleculus turns learning into an exciting adventure!<br><br>
   </HorizontalSection>
 
-  <HorizontalSection title="Escape from Pixel Castle" direction="center" fontsize1="3rem" fontsize2="1.25rem" justifycontent="center" width="100%">
-    <section>
-      <div style="width: 100%; max-width: 1200px; margin: 0 auto;">
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-          <iframe
-            src="https://view.genially.com/69b5552f8664db388c524ef7"
-            title="Escape from Pixel Castle"
-            frameborder="0"
-            allowfullscreen
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-          ></iframe>
-        </div>
-      </div>
-    </section>
+  <HorizontalSection title="What We Offer:" direction="left" fontsize1="3rem" fontsize2="2rem" justifycontent="center" width="100%">
+    Scaleculus makes learning calculus fun! Explore lessons on Limits, Continuity, Tangent Lines, Differentiation, and the Chain Rule.<br>
+    Play interactive games in our Arcade while practicing what you learn!<br>
+  </HorizontalSection>
+
+  <HorizontalSection title="Members:" direction="left" fontsize1="3rem" fontsize2="2rem" justifycontent="center" width="100%">
+    Made by 11-STEM-Scalable
+  </HorizontalSection>
+
+  <HorizontalSection title="Frequently Asked Questions (FAQs)" direction="center" fontsize1="3rem" fontsize2="2rem" justifycontent="center" width="100%" height="10vh">
+    Common Questions<br><br>
+
+    <Accordion
+      title="What is Scaleculus?"
+      id="What is Scaleculus?"
+      direction="left"
+      justifycontent="flex-start"
+      fontsize1="2rem"
+      fontsize2="1.5rem"
+      width="99%"
+      height="auto"
+    >
+      Scaleculus is an interactive learning website for students to explore calculus concepts.<br>
+    </Accordion>
+
+    <Accordion
+      title="How do I navigate the website?"
+      id="How do I navigate the website?"
+      direction="left"
+      justifycontent="flex-start"
+      fontsize1="2rem"
+      fontsize2="1.5rem"
+      width="99%"
+      height="auto"
+    >
+      Use the Home Button, table of contents, and links on each page to access lessons, exercises, and games.<br>
+    </Accordion>
+
+    <Accordion
+      title="What are the different calculus topics covered?"
+      id="What are the different calculus topics covered?"
+      direction="left"
+      justifycontent="flex-start"
+      fontsize1="2rem"
+      fontsize2="1.5rem"
+      width="99%"
+      height="auto"
+    >
+      The website covers limits, derivatives, chain rule, implicit differentiation and related problem-solving exercises<br>
+    </Accordion>
+
+    <Accordion
+      title="How can I track my learning progress?"
+      id="How can I track my learning progress?"
+      direction="left"
+      justifycontent="flex-start"
+      fontsize1="2rem"
+      fontsize2="1.5rem"
+      width="99%"
+      height="auto"
+    >
+      Keep notes of completed lessons and scores from the games to monitor your improvement.<br>
+    </Accordion>
+
+    <Accordion
+      title="Can I access the website on mobile devices?"
+      id="Can I access the website on mobile devices?"
+      direction="left"
+      justifycontent="flex-start"
+      fontsize1="2rem"
+      fontsize2="1.5rem"
+      width="99%"
+      height="auto"
+    >
+      Yes, but the website is primarily designed for larger monitor viewing on computers.<br>
+    </Accordion>
+
+    <Accordion
+      title="Is my data private when using the website?"
+      id="Is my data private when using the website?"
+      direction="left"
+      justifycontent="flex-start"
+      fontsize1="2rem"
+      fontsize2="1.5rem"
+      width="99%"
+      height="auto"
+    >
+      Yes, the website does not collect personal data beyond basic usage analytics for improving the site.<br>
+    </Accordion>
+
+    <Accordion
+      title="Can I suggest topics or improvements for the site?"
+      id="Can I suggest topics or improvements for the site?"
+      direction="left"
+      justifycontent="flex-start"
+      fontsize1="2rem"
+      fontsize2="1.5rem"
+      width="99%"
+      height="auto"
+    >
+      Yes, suggestions are welcome through the contact form or email.<br>
+    </Accordion>
+
   </HorizontalSection>
 </SubLayout>
 
@@ -65,10 +151,7 @@ import { Accordion, AccordionItem } from 'free-astro-components';
     gap: 2rem;
     justify-content: center;
   }
-
-  .Section-con2 {
-    display: flex;
-    flex-wrap: wrap;
+</style>
     align-items: center;
     justify-content: center;
     gap: 1rem;
@@ -92,4 +175,3 @@ import { Accordion, AccordionItem } from 'free-astro-components';
     box-sizing: border-box;
   }
 </style>
->>>>>>> 0a3e092 (MALAPIT NA (akong mamata-))
