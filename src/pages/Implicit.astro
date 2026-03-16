@@ -14,188 +14,455 @@ import StepList from '../components/StepsElement.astro';
   <div class="page-wrapper">
     <!-- TOC -->
     <nav class="toc">
-  <ul>
-    <li>
-      <a href="#ImplicitChain">➤ Implicit and Chain Rule</a>
-      <ul> <!-- nested list for hierarchy -->
-        <li><a href="#ImplicitChain_Video">● Video Lesson</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#Title_Imp">➤ Implicit Differentiation</a>
       <ul>
-        <li><a href="#ID_EX">● Example</a></li>
+        <li>
+          <a href="#Introduction">➤ Introduction</a>
+          <ul>
+            <li><a href="#Intro_Video">● Video Lesson</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#ChainRule">➤ Chain Rule</a>
+          <ul>
+            <li><a href="#ChainRule_Examples">● Examples</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#ImplicitDiff">➤ Implicit Differentiation</a>
+          <ul>
+            <li><a href="#ImplicitDiff_Examples">● Examples</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#Practice">➤ Practice Exercises</a>
+        </li>
       </ul>
-    </li>
-    <li>
-      <a href="#Title_Chain">➤ Chain Rule</a>
-      <ul>
-        <li><a href="#CH_EX">● Example</a></li>=
-      </ul>
-    </li>
-  </ul>
 
-  <svg class="toc-marker" width="100%" height="100%">
-    <path stroke="var(--wisteria)" stroke-width="3" fill="transparent" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-</nav>
+      <svg class="toc-marker" width="100%" height="100%">
+        <path stroke="var(--wisteria)" stroke-width="3" fill="transparent" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </nav>
 
     <!-- Main content -->
     <main class="main-content">
       <div class="Spacer"></div>
+
       <HorSection2
-        title="Implicit and Chain Rule"
-        id="ImplicitChain"
+        title="Introduction"
+        id="Introduction"
         direction="left"
         fontsize1="4rem"
         fontsize2="2rem"
         justifycontent="flex-start"
         width="100%"
       >
+        <p>
+          This lesson covers two important differentiation techniques:<br>
+          • <strong>Chain Rule</strong> — used when a function is inside another function (composite functions).<br>
+          • <strong>Implicit Differentiation</strong> — used when x and y are mixed together in an equation.
+        </p>
+        <p>
+          Throughout this page, we use <code>dy/dx</code> for derivatives and <code>^</code> for exponents.
+        </p>
       </HorSection2>
 
       <HorSection2
         title="Video Lesson"
-        id="ImplicitChain_Video"
+        id="Intro_Video"
         direction="left"
         fontsize1="4rem"
         fontsize2="2rem"
         justifycontent="flex-start"
         width="100%"
       >
-        [Insert Video]  
-      </HorSection2>
-
-      <HorSection2  
-        title="Implicit Differentiation"
-        id="Title_Imp"
-        direction="left"
-        fontsize1="4rem"
-        fontsize2="2rem"
-        justifycontent="flex-start"
-        width="100%"
-      >
-        <strong>Concept: </strong><br>
-    &nbsp;&nbsp;Implicit differentiation is used when <strong>x and y are mixed in the same equation</strong> instead of writing the function as y = f(x).<br><br>
-
-    &nbsp;&nbsp;When we differentiate with respect to <strong>x</strong>, every time we differentiate a term containing <strong>y</strong>, we must multiply by <strong>dy/dx</strong>.<br>
-    &nbsp;&nbsp;In other words, the variable <strong>y turns into dy/dx</strong> after differentiation because y depends on x.<br><br>
-
-      <div id ="ID_EX1" ></div>
-      <Accordion
-        title="Example: (Click to View)"
-        id="ID_EX"
-        direction="left"
-        justifycontent="flex-start"
-        fontsize1="2rem"
-        fontsize2="1.5rem"
-        >
-        
-        <strong>Example:</strong><br>
-    &nbsp;&nbsp;Given the equation: <strong>x² + y² = 25</strong><br><br>
-
-    &nbsp;&nbsp;Differentiate both sides with respect to x:<br>
-    &nbsp;&nbsp;<strong>2x + 2y(dy/dx) = 0</strong><br><br>
-
-    &nbsp;&nbsp;Solve for dy/dx:<br>
-    &nbsp;&nbsp;<strong>dy/dx = -x / y</strong>
-        </Accordion>
-      
+        [Insert Video]
       </HorSection2>
 
       <HorSection2
         title="Chain Rule"
-        id="Title_Chain"
+        id="ChainRule"
         direction="left"
         fontsize1="4rem"
         fontsize2="2rem"
         justifycontent="flex-start"
         width="100%"
       >
-        <strong>Concept:</strong><br>
-          &nbsp;&nbsp;The chain rule is used when a function is <strong>inside another function</strong>.<br>
-        &nbsp;&nbsp;It allows us to differentiate composite functions.<br><br>
+        <p>
+          The <strong>Chain Rule</strong> helps us differentiate <strong>composite functions</strong> — functions inside other functions.
+        </p>
+        <p><strong>General formula:</strong></p>
+        <pre><code>y = f(g(x))
+dy/dx = f'(g(x)) * g'(x)</code></pre>
 
-        <strong>General Formula:</strong><br>
-        &nbsp;&nbsp;<strong>(f(g(x)))' = f'(g(x)) · g'(x)</strong><br><br>
-
-        <div id ="CH_EX1" ></div>
+        <div id="ChainRule_Examples"></div>
         <Accordion
-        title="Example: (Click to View)"
-        id="CH_EX"
-        direction="left"
-        justifycontent="flex-start"
-        fontsize1="2rem"
-        fontsize2="1.5rem"
+          title="Chain Rule Examples (Click to Expand)"
+          id="ChainRule_ExampleList"
+          direction="left"
+          justifycontent="flex-start"
+          fontsize1="2rem"
+          fontsize2="1.5rem"
         >
-        
-        <strong>Example:</strong><br>
-        &nbsp;&nbsp;Find the derivative of: <strong>y = (3x + 1)⁵</strong><br><br>
+          <strong>Example 1</strong><br>
+          <code>y = (3x^2 + 5)^7</code><br>
+          Outer derivative:<br>
+          <code>7(3x^2 + 5)^6</code><br>
+          Inner derivative:<br>
+          <code>6x</code><br>
+          <strong>Final:</strong><br>
+          <code>dy/dx = 42x(3x^2 + 5)^6</code>
 
-        &nbsp;&nbsp;Outer function: <strong>u⁵</strong><br>
-        &nbsp;&nbsp;Inner function: <strong>u = 3x + 1</strong><br><br>
+          <hr>
 
-        &nbsp;&nbsp;Derivative:<br>
-        &nbsp;&nbsp;<strong>dy/dx = 5(3x + 1)⁴ · 3</strong><br><br>
+          <strong>Example 2</strong><br>
+          <code>y = sqrt(x^4 - 2x)</code><br>
+          Rewrite:<br>
+          <code>y = (x^4 - 2x)^(1/2)</code><br>
+          Derivative:<br>
+          <code>dy/dx = (1/2)(x^4 - 2x)^(-1/2) * (4x^3 - 2)</code><br>
+          Simplified:<br>
+          <code>dy/dx = (4x^3 - 2)/(2sqrt(x^4 - 2x))</code>
 
-        &nbsp;&nbsp;<strong>Final Answer:</strong><br>
-        &nbsp;&nbsp;<strong>dy/dx = 15(3x + 1)⁴</strong>
-        
+          <hr>
+
+          <strong>Example 3</strong><br>
+          <code>y = sin(5x^3)</code><br>
+          Outer derivative:<br>
+          <code>cos(5x^3)</code><br>
+          Inner derivative:<br>
+          <code>15x^2</code><br>
+          <strong>Final:</strong><br>
+          <code>dy/dx = 15x^2 cos(5x^3)</code>
+
+          <hr>
+
+          <strong>Example 4</strong><br>
+          <code>y = (cos(4x))^2</code><br>
+          <code>dy/dx = 2cos(4x) * (-sin(4x)) * 4</code><br>
+          <strong>Final:</strong><br>
+          <code>dy/dx = -8cos(4x)sin(4x)</code>
+
+          <hr>
+
+          <strong>Example 5</strong><br>
+          <code>y = (x^2 + 10)^(-3)</code><br>
+          <strong>Derivative:</strong><br>
+          <code>dy/dx = -6x(x^2 + 10)^(-4)</code>
         </Accordion>
-        
       </HorSection2>
 
+      <HorSection2
+        title="Implicit Differentiation"
+        id="ImplicitDiff"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+        <p>
+          Implicit equations mix <strong>x</strong> and <strong>y</strong> together, like <code>x^2 + y^2 = 25</code>.
+          We cannot isolate y easily, so we differentiate both sides with respect to x.
+        </p>
+        <p>
+          Whenever we differentiate a term containing y, we multiply by <code>dy/dx</code> because y depends on x.
+        </p>
+
+        <div id="ImplicitDiff_Examples"></div>
+        <Accordion
+          title="Implicit Differentiation Examples (Click to Expand)"
+          id="ImplicitDiff_ExampleList"
+          direction="left"
+          justifycontent="flex-start"
+          fontsize1="2rem"
+          fontsize2="1.5rem"
+        >
+          <strong>Example 1</strong><br>
+          <code>x^2 + y^2 = 25</code><br>
+          Derivative:<br>
+          <code>2x + 2y(dy/dx) = 0</code><br>
+          <strong>Solve:</strong><br>
+          <code>dy/dx = -x / y</code>
+
+          <hr>
+
+          <strong>Example 2</strong><br>
+          <code>x^2 + xy + y^2 = 10</code><br>
+          Derivative:<br>
+          <code>2x + x(dy/dx) + y + 2y(dy/dx) = 0</code><br>
+          Group terms:<br>
+          <code>(x + 2y)dy/dx = -(2x + y)</code><br>
+          <strong>Final:</strong><br>
+          <code>dy/dx = -(2x + y)/(x + 2y)</code>
+
+          <hr>
+
+          <strong>Example 3</strong><br>
+          <code>xy = 5</code><br>
+          Derivative:<br>
+          <code>x(dy/dx) + y = 0</code><br>
+          <strong>Solve:</strong><br>
+          <code>dy/dx = -y/x</code>
+        </Accordion>
+      </HorSection2>
 
       <HorSection2
-title="Made with ❤ from Scalable!"
-direction="left"
-fontsize1="1rem"
-fontsize2="1rem"
-justifycontent="flex-start"
-width="100%"
->
-<section class="Section-End">
-    <div class="NavButtons">
-        <a href="/Scaleculus/Limits" class="Differentiation">← Differentiation</a>
-        <a href="/Scaleculus/Homepage" class="NextBtn">Homepage →</a>
-    </div>
+        title="Practice Exercises"
+        id="Practice"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+        <h3>Chain Rule</h3>
+        <ol>
+          <li><code>y = (2x^3 + 1)^5</code></li>
+          <li><code>y = sqrt(x^2 + 4x)</code></li>
+          <li><code>y = sin(3x^2)</code></li>
+          <li><code>y = (cos x)^4</code></li>
+          <li><code>y = (x^3 + 7)^(-2)</code></li>
+        </ol>
 
-</section>
+        <h3>Implicit Differentiation</h3>
+        <ol>
+          <li><code>x^2 + y^2 = 16</code></li>
+          <li><code>x^2 + xy = 8</code></li>
+          <li><code>x^2y + y = 3</code></li>
+          <li><code>x^3 + y^3 = 9</code></li>
+          <li><code>xy + y^2 = 10</code></li>
+        </ol>
+      </HorSection2>
+
+      <HorSection2
+        title="Made with ❤ from Scalable!"
+        direction="left"
+        fontsize1="1rem"
+        fontsize2="1rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+        <section class="Section-End">
+          <div class="NavButtons">
+            <a href="/Scaleculus/Limits" class="Differentiation">← Differentiation</a>
+            <a href="/Scaleculus/Homepage" class="NextBtn">Homepage →</a>
+          </div>
+        </section>
+
+        <style>
+          .Section-End{
+            display:flex;
+            flex-direction:column;
+            gap:1rem;
+          }
+
+          .NavButtons{
+            display:flex;
+            justify-content:space-between;
+            margin-top:0.5rem;
+          }
+
+          .PrevBtn,
+          .NextBtn{
+            font-family:"Quicksand", sans-serif;
+            font-size:2rem;
+            text-decoration:none;
+            padding:0.35rem 0.8rem;
+            border-radius:0.4rem;
+
+            color:var(--snow);
+            background:rgba(231,179,255,0.08);
+
+            transition:all 0.2s ease;
+          }
+
+          .PrevBtn:hover,
+          .NextBtn:hover{
+            background:rgba(231,179,255,0.18);
+            box-shadow:0 0 6px rgba(193,142,199,0.4);
+            transform:translateY(-2px);
+          }
+        </style>
+      </HorSection2>
+    </main>
+  </div>
+</SubLayout>
 
 <style>
-.Section-End{
-    display:flex;
-    flex-direction:column;
-    gap:1rem;
+:root {
+  --wisteria: rgb(190, 173, 220);
+  --snow: #F8EEED;
+  --shadow-grey: rgb(20,21,39);
 }
 
-.NavButtons{
-    display:flex;
-    justify-content:space-between;
-    margin-top:0.5rem;
+html {
+  scroll-behavior: smooth;
 }
 
-.PrevBtn,
-.NextBtn{
-    font-family:"Quicksand", sans-serif;
-    font-size:2rem;
-    text-decoration:none;
-    padding:0.35rem 0.8rem;
-    border-radius:0.4rem;
+.Spacer { margin-top: 10rem; }
 
-    color:var(--snow);
-    background:rgba(231,179,255,0.08);
-
-    transition:all 0.2s ease;
+/* TOC Island */
+.page-wrapper {
+  display: flex;
+  gap: 2rem;                /* space between TOC and content */
+  min-height: 100vh;        /* full viewport height */
 }
 
-.PrevBtn:hover,
-.NextBtn:hover{
-    background:rgba(231,179,255,0.18);
-    box-shadow:0 0 6px rgba(193,142,199,0.4);
-    transform:translateY(-2px);
+.toc {
+  flex-shrink: 0;
+  position: fixed;           /* fixed on screen */
+  top: 0;
+  left: 0;
+  height: 100vh;             /* full viewport height */
+  padding: 2rem 1em;
+  width: 14em;
+  background: rgba(30, 20, 39, 0.95);
+  border-radius: 0 1rem 1rem 0;
+  box-shadow: 0 0 1rem rgba(190,173,220,0.5);
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* center TOC items vertically */
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 16em; /* TOC width + a little extra gap so nothing overlaps */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem; /* vertical spacing between HorSection2 and Accordion */
+  padding: 2rem;
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc ul ul {
+  padding-left: 1.5em;
+}
+
+.toc li a {
+  display: inline-block;
+  color: var(--snow);
+  font-weight: 1000;
+  text-decoration: none;
+  font-family: "Quicksand", sans-serif;
+  font-size: 1.3rem;       /* bigger font size */
+  padding: 0.5rem 0 2rem 0; /* keep vertical spacing */
+  transition: all 0.3s ease;
+}
+
+.toc li a.visible {
+  color: var(--wisteria);
+  font-weight: 1000;
+  transform: translateX(5px);
+}
+
+.toc-marker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.toc-marker path {
+  transition: all 0.3s ease;
+}
+
+/* Push main content to the right so TOC doesn’t overlap */
+.contents {
+  margin-left: 16em; /* TOC width + small gap */
+  max-width: 800px;
+  padding: 1em;
+  font-family: 'Quicksand', sans-serif;
 }
 </style>
+
+<script is:inline>
+  // Floating TOC Scroll Tracking
+  var toc = document.querySelector('.toc');
+  var tocPath = toc.querySelector('.toc-marker path');
+  var tocItems;
+  var TOP_MARGIN = 0.1, BOTTOM_MARGIN = 0.2;
+  var pathLength;
+  var lastPathStart, lastPathEnd;
+
+  window.addEventListener('resize', drawPath);
+  window.addEventListener('scroll', sync);
+
+  drawPath();
+
+  function drawPath() {
+    tocItems = Array.from(toc.querySelectorAll('li')).map(item => {
+      var anchor = item.querySelector('a');
+      var target = document.getElementById(anchor.getAttribute('href').slice(1));
+      return { listItem: item, anchor: anchor, target: target };
+    }).filter(item => !!item.target);
+
+    var path = [], pathIndent;
+
+    tocItems.forEach((item, i) => {
+      const rect = item.anchor.getBoundingClientRect(); // use rendered size
+      const x = item.anchor.offsetLeft - 5;
+      const y = item.anchor.offsetTop;
+      const height = rect.height; // fully accounts for padding
+
+      if (i === 0) {
+        path.push('M', x, y, 'L', x, y + height);
+        item.pathStart = 0;
+      } else {
+        if (pathIndent !== x) path.push('L', pathIndent, y);
+        path.push('L', x, y);
+        tocPath.setAttribute('d', path.join(' '));
+        item.pathStart = tocPath.getTotalLength() || 0;
+        path.push('L', x, y + height);
+      }
+      pathIndent = x;
+      tocPath.setAttribute('d', path.join(' '));
+      item.pathEnd = tocPath.getTotalLength();
+    });
+
+    pathLength = tocPath.getTotalLength();
+    sync();
+  }
+
+  function sync() {
+    var windowHeight = window.innerHeight;
+    var pathStart = pathLength, pathEnd = 0;
+    var visibleItems = 0;
+
+    tocItems.forEach(item => {
+      var targetBounds = item.target.getBoundingClientRect();
+      if(targetBounds.bottom > windowHeight * TOP_MARGIN &&
+         targetBounds.top < windowHeight * (1 - BOTTOM_MARGIN)) {
+        pathStart = Math.min(item.pathStart, pathStart);
+        pathEnd = Math.max(item.pathEnd, pathEnd);
+        visibleItems += 1;
+        item.anchor.classList.add('visible');
+      } else {
+        item.anchor.classList.remove('visible');
+      }
+    });
+
+    if (visibleItems > 0 && pathStart < pathEnd) {
+      tocPath.setAttribute('stroke-dashoffset', '1');
+      tocPath.setAttribute('stroke-dasharray', `1, ${pathStart}, ${pathEnd - pathStart}, ${pathLength}`);
+      tocPath.setAttribute('opacity', 1);
+    } else {
+      tocPath.setAttribute('opacity', 0);
+    }
+
+    lastPathStart = pathStart;
+    lastPathEnd = pathEnd;
+  }
+</script>
 
 
 
