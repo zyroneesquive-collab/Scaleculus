@@ -7,21 +7,28 @@ import Accordion from "../components/Accordion.astro";
 import StepList from '../components/StepsElement.astro';
 ---
 
-<SubLayout title={Topics.Titles[2]}>
+<SubLayout>
 
-  <Sidebar currentPage="Slope"></Sidebar>
+  <Sidebar currentPage="Lessons"></Sidebar>
 
   <div class="page-wrapper">
     <!-- TOC -->
     <nav class="toc">
   <ul>
     <li>
-      <a href="#Title_Tangent">➤ Tangent Line</a>
-      <ul> <!-- nested list for hierarchy -->
-        <li><a href="#Tangent_Video">● Video Lesson</a></li>
-        <li><a href="#Tangent_Definition">● Definition</a></li>
-        <li><a href="#Tangent_Example">● Examples</a></li>
-      </ul>
+      <a href="#Title_LimitsL">➤ Limits</a>
+    </li>
+    <li>
+      <a href="#Title_ContinuityL">➤ Continuity</a>
+    </li>
+    <li>
+      <a href="#SlopeofaTangentLine">➤ Slope of a Tangent Line</a>
+    </li>
+    <li>
+      <a href="#DifferentiationRules">➤ Differentiation Rules</a>
+    </li>
+    <li>
+      <a href="#Chain_ImplicitDiff">➤ Chain Rule and Implicit Differentiation</a>
     </li>
   </ul>
 
@@ -34,95 +41,123 @@ import StepList from '../components/StepsElement.astro';
     <main class="main-content">
       <div class="Spacer"></div>
       <HorSection2
+        title="Limits"
+        id="Title_LimitsL"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+      <a href="/Scaleculus/Limits/">
+        <HorSection2
+        title="Lesson Link"
+        id="Title_LimitsL"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+      Click Here
+      </HorSection2>
+      </a>
+      </HorSection2>
+      
+      <HorSection2
+        title="Continuity"
+        id="Title_ContinuityL"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+      <a href="/Scaleculus/Continuity/">
+        <HorSection2
+        title="Lesson Link"
+        id="Title_ContinuityL"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+      Click Here
+      </HorSection2>
+      </a>
+      </HorSection2>
+      
+      <HorSection2
         title="Slope of a Tangent Line"
-        id="Title_Tangent"
+        id="SlopeofaTangentLine"
         direction="left"
         fontsize1="4rem"
         fontsize2="2rem"
         justifycontent="flex-start"
         width="100%"
       >
+      <a href="/Scaleculus/Slope/">
+        <HorSection2
+        title="Lesson Link"
+        id="SlopeofaTangentLine"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+      Click Here
+      </HorSection2>
+      </a>
       </HorSection2>
 
       <HorSection2
-        title="Video Lesson"
-        id="Tangent_Video"
+        title="Differentiation Rules"
+        id="DifferentiationRules"
         direction="left"
         fontsize1="4rem"
         fontsize2="2rem"
         justifycontent="flex-start"
         width="100%"
       >
-        [Insert Video]  
+      <a href="/Scaleculus/Differentiation/">
+        <HorSection2
+        title="Lesson Link"
+        id="DifferentiationRules"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+      Click Here
+      </HorSection2>
+      </a>
       </HorSection2>
 
       <HorSection2
-        title="The Tangent Line"
-        id="Tangent_Definition"
+        title="Chain Rule and Implicit Differentiation"
+        id="Chain_ImplicitDiff"
         direction="left"
         fontsize1="4rem"
         fontsize2="2rem"
         justifycontent="flex-start"
         width="100%"
       >
-        <h3>The Tangent Line</h3>
-        The <strong>tangent line</strong> to a curve at a specific point is a straight line that best approximates the <strong>slope of the curve</strong> at that exact point.<br>
-        Unlike a secant line, which passes through two points, the tangent line represents the <strong>instantaneous rate of change</strong>.<br><br>
-
-        To find the slope <strong>m</strong> of the tangent line at a point (x₀, f(x₀)), we use the limit of the slopes of secant lines as x gets closer and closer to x₀:<br>
-        &nbsp;&nbsp;m = lim (x → x₀) [(f(x) - f(x₀)) / (x - x₀)]<br><br>
-
-        <strong>Explanation:</strong><br>
-        &nbsp;&nbsp;<strong>y − y₀:</strong> The vertical distance between a moving point and the fixed point.<br>
-        &nbsp;&nbsp;<strong>x − x₀:</strong> The horizontal distance between them.<br>
-        &nbsp;&nbsp;<strong>The Limit:</strong> As the distance x − x₀ shrinks to zero, the secant line becomes the tangent line.
+      <a href="/Scaleculus/Implicit/">
+        <HorSection2
+        title="Lesson Link"
+        id="Chain_ImplicitDiff"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+      Click Here
       </HorSection2>
-
-      <HorSection2
-        title="Example"
-        id="Tangent_Example"
-        direction="left"
-        fontsize1="4rem"
-        fontsize2="2rem"
-        justifycontent="flex-start"
-        width="100%"
-      >
-
-        <Accordion
-        title="Example 1: (Click to View)"
-        id="Example 1: (Click to View)a"
-        direction="left"
-        justifycontent="flex-start"
-        fontsize1="2rem"
-        fontsize2="1.5rem"
-        >
-        <h3>Example: Slope of the Tangent Line</h3>
-    Find the slope of the tangent line to the curve <strong>y = x²</strong> at the point (2, 4).<br><br>
-
-    <strong>Step 1: Identify your values</strong><br>
-    &nbsp;&nbsp;x₀ = 2<br>
-    &nbsp;&nbsp;y₀ = 4<br>
-    &nbsp;&nbsp;y = x²<br><br>
-
-    <strong>Step 2: Set up the formula</strong><br>
-    &nbsp;&nbsp;m = lim (x → x₀) [(f(x) - y₀) / (x - x₀)]<br><br>
-
-    <strong>Step 3: Substitute the function for y</strong><br>
-    &nbsp;&nbsp;m = lim (x → 2) [(x² - 4) / (x - 2)]<br><br>
-
-    <strong>Step 4: Factor the numerator</strong><br>
-    &nbsp;&nbsp;m = lim (x → 2) [((x - 2)(x + 2)) / (x - 2)]<br><br>
-
-    <strong>Step 5: Cancel the common factor</strong><br>
-    &nbsp;&nbsp;m = lim (x → 2) (x + 2)<br><br>
-
-    <strong>Step 6: Evaluate the limit</strong><br>
-    &nbsp;&nbsp;m = 2 + 2 = 4<br><br>
-
-    <strong>Answer:</strong><br>
-    &nbsp;&nbsp;The slope of the tangent line at (2, 4) is <strong>4</strong>.
-        </Accordion>
-
+      </a>
       </HorSection2>
 
       <HorSection2
@@ -135,8 +170,8 @@ width="100%"
 >
 <section class="Section-End">
     <div class="NavButtons">
-        <a href="/Scaleculus/Continuity" class="PrevBtn">← Continuity</a>
-        <a href="/Scaleculus/Differentiation" class="NextBtn">Differentiation →</a>
+        <a href="/Scaleculus/" class="PrevBtn">← Homepage</a>
+        <a href="/Scaleculus/Limits" class="NextBtn">Limits →</a>
     </div>
 
 </section>
@@ -176,7 +211,7 @@ width="100%"
 }
 </style>
 
-
+</HorSection2>
 
     </main>
   </div>

@@ -7,7 +7,7 @@ import Accordion from "../components/Accordion.astro";
 import StepList from '../components/StepsElement.astro';
 ---
 
-<SubLayout title={Topics.Titles[0]}>
+<SubLayout title={Topics.Titles[4]}>
 
   <Sidebar currentPage="Limits"></Sidebar>
 
@@ -16,18 +16,21 @@ import StepList from '../components/StepsElement.astro';
     <nav class="toc">
   <ul>
     <li>
-      <a href="#Title_limits">➤ Limits</a>
+      <a href="#ImplicitChain">➤ Implicit and Chain Rule</a>
       <ul> <!-- nested list for hierarchy -->
-        <li><a href="#Limits_Video">● Video Lesson</a></li>
-        <li><a href="#Limits_Definition">● What are Limits?</a></li>
+        <li><a href="#ImplicitChain_Video">● Video Lesson</a></li>
       </ul>
     </li>
     <li>
-      <a href="#Title_DS">➤ Direct Substitution</a>
+      <a href="#Title_Imp">➤ Implicit Differentiation</a>
       <ul>
-        <li><a href="#DS_Expo">● Exponential</a></li>
-        <li><a href="#DS_Trigo">● Trigonometric</a></li>
-        <li><a href="#DS_Log">● Logarithmic</a></li>
+        <li><a href="#ID_EX">● Example</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#Title_Chain">➤ Chain Rule</a>
+      <ul>
+        <li><a href="#CH_EX">● Example</a></li>=
       </ul>
     </li>
   </ul>
@@ -41,8 +44,8 @@ import StepList from '../components/StepsElement.astro';
     <main class="main-content">
       <div class="Spacer"></div>
       <HorSection2
-        title="Limits"
-        id="Title_limits"
+        title="Implicit and Chain Rule"
+        id="ImplicitChain"
         direction="left"
         fontsize1="4rem"
         fontsize2="2rem"
@@ -53,7 +56,7 @@ import StepList from '../components/StepsElement.astro';
 
       <HorSection2
         title="Video Lesson"
-        id="Limits_Video"
+        id="ImplicitChain_Video"
         direction="left"
         fontsize1="4rem"
         fontsize2="2rem"
@@ -63,25 +66,85 @@ import StepList from '../components/StepsElement.astro';
         [Insert Video]  
       </HorSection2>
 
-      <HorSection2
-        title="What are Limits?"
-        id="Limits_Definition"
+      <HorSection2  
+        title="Implicit Differentiation"
+        id="Title_Imp"
         direction="left"
         fontsize1="4rem"
         fontsize2="2rem"
         justifycontent="flex-start"
         width="100%"
       >
-        A limit is a value that a function approaches as the input approaches a certain number. <br>The general form is: <br><br>
-        y = a•bx where: <br><br>
-        •a is a constant (initial value). <br> 
-        •b is the base, and it’s typically a positive real number. <br>
-        •x is the exponent. <br> 
-        Exponential Function: f(x) = a • t <br>
+        <strong>Concept: </strong><br>
+    &nbsp;&nbsp;Implicit differentiation is used when <strong>x and y are mixed in the same equation</strong> instead of writing the function as y = f(x).<br><br>
+
+    &nbsp;&nbsp;When we differentiate with respect to <strong>x</strong>, every time we differentiate a term containing <strong>y</strong>, we must multiply by <strong>dy/dx</strong>.<br>
+    &nbsp;&nbsp;In other words, the variable <strong>y turns into dy/dx</strong> after differentiation because y depends on x.<br><br>
+
+      <div id ="ID_EX" ></div>
+      <Accordion
+        title="Example: (Click to View)"
+        id="ID_EX"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        
+        <strong>Example:</strong><br>
+    &nbsp;&nbsp;Given the equation: <strong>x² + y² = 25</strong><br><br>
+
+    &nbsp;&nbsp;Differentiate both sides with respect to x:<br>
+    &nbsp;&nbsp;<strong>2x + 2y(dy/dx) = 0</strong><br><br>
+
+    &nbsp;&nbsp;Solve for dy/dx:<br>
+    &nbsp;&nbsp;<strong>dy/dx = -x / y</strong>
+        </Accordion>
+      
       </HorSection2>
 
+      <HorSection2
+        title="Chain Rule"
+        id="Title_Chain"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+        <strong>Concept:</strong><br>
+          &nbsp;&nbsp;The chain rule is used when a function is <strong>inside another function</strong>.<br>
+        &nbsp;&nbsp;It allows us to differentiate composite functions.<br><br>
 
-      <div class="Spacer"></div>
+        <strong>General Formula:</strong><br>
+        &nbsp;&nbsp;<strong>(f(g(x)))' = f'(g(x)) · g'(x)</strong><br><br>
+
+        <div id ="CH_EX" ></div>
+        <Accordion
+        title="Example: (Click to View)"
+        id="CH_EX"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        
+        <strong>Example:</strong><br>
+        &nbsp;&nbsp;Find the derivative of: <strong>y = (3x + 1)⁵</strong><br><br>
+
+        &nbsp;&nbsp;Outer function: <strong>u⁵</strong><br>
+        &nbsp;&nbsp;Inner function: <strong>u = 3x + 1</strong><br><br>
+
+        &nbsp;&nbsp;Derivative:<br>
+        &nbsp;&nbsp;<strong>dy/dx = 5(3x + 1)⁴ · 3</strong><br><br>
+
+        &nbsp;&nbsp;<strong>Final Answer:</strong><br>
+        &nbsp;&nbsp;<strong>dy/dx = 15(3x + 1)⁴</strong>
+        
+        </Accordion>
+        
+      </HorSection2>
+
 
       <HorSection2
 title="Made with ❤ from Scalable!"

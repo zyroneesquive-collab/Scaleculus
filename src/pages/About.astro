@@ -1,14 +1,54 @@
 ---
+import Topics from "../data/topics.json";
+
+import SubLayout from "../layouts/sub_layout.astro";
+import SectionElement from "../components/SectionElement.astro";
+import HorizontalSection from "../components/HorizontalSection.astro";
+import HorSection2 from "../components/Hor-Section2.astro";
+import Sidebar from '../components/Sidebar.astro';
+import { Button } from 'free-astro-components';
+
+import { Accordion, AccordionItem } from 'free-astro-components';
 ---
 
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Scaleculus</title>
+<SubLayout>
+  <Sidebar currentPage="Games"></Sidebar>
+
+  <HorizontalSection title="Play and Have Fun" direction="left" fontsize1="3rem" fontsize2="1.25rem" justifycontent="flex-start" width="100%">
+    <section>
+      Scaleculus makes learning calculus fun! Explore lessons on Limits, Continuity, Tangent Lines, Differentiation, and the Chain Rule.<br /><br />
+      Play interactive games in our Arcade while practicing what you learn!
+    </section>
+  </HorizontalSection>
+
+  <HorizontalSection title="Escape from Pixel Castle" direction="center" fontsize1="3rem" fontsize2="1.25rem" justifycontent="center" width="100%">
+    <section>
+      <div style="width: 100%; max-width: 1200px; margin: 0 auto;">
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+          <iframe
+            src="https://view.genially.com/69b5552f8664db388c524ef7"
+            title="Escape from Pixel Castle"
+            frameborder="0"
+            allowfullscreen
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </HorizontalSection>
+</SubLayout>
 
 <style>
-:root {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .Spacer {
+    margin-top: 10rem;
+  }
+
+  :root {
     --wisteria: #BEADDCff;
     --shadow-grey: #141527ff;
     --petal-frost: #F7D3EBff;
@@ -16,67 +56,40 @@
     --wisteria-2: #C493DAff;
     --amethyst-smoke: #C18EC7ff;
     --snow: #F8EEEDff;
-}
+  }
 
-body{
-background:var(--shadow-grey);
-color:var(--snow);
-font-family:Arial, Helvetica, sans-serif;
-margin:0;
-}
+  .Section-con {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+  }
 
-.container{
-max-width:900px;
-margin:auto;
-padding:60px 20px;
-}
+  .Section-con2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 
-.card{
-background:var(--wisteria);
-color:#222;
-padding:40px;
-border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
-}
+    width: 100%;
+    min-height: 100vh;
 
-h1{
-color:var(--petal-frost);
-text-align:center;
-margin-bottom:30px;
-}
+    background-color: rgba(20, 21, 39, 0.4);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
 
+    border: 2px solid var(--wisteria-2);
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(193, 142, 199, 0.4);
+
+    margin-bottom: 10rem;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+
+    box-sizing: border-box;
+  }
 </style>
-</head>
-
-<body>
-
-<div class="container">
-
-<h1>About Scaleculus</h1>
-
-<div class="card">
-
-<h2>About Us</h2>
-
-<p>
-Scaleculus is a Grade 11 STEM initiative focused on making calculus clear, interactive, and accessible.
-</p>
-
-<br>
-
-<p>
-Our website provides lessons, examples, and step-by-step guides to help students master limits, derivatives, integrals, and more.
-</p>
-
-<br>
-
-<p>
-Designed by students, for students, Scaleculus turns challenging calculus concepts into learning that’s both scalable and understandable.
-</p>
-
-</div>
-
-</div>
-
-</body>
-</html>
+>>>>>>> 0a3e092 (MALAPIT NA (akong mamata-))

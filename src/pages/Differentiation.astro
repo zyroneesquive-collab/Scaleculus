@@ -7,9 +7,9 @@ import Accordion from "../components/Accordion.astro";
 import StepList from '../components/StepsElement.astro';
 ---
 
-<SubLayout title={Topics.Titles[0]}>
+<SubLayout title={Topics.Titles[3]}>
 
-  <Sidebar currentPage="Slope"></Sidebar>
+  <Sidebar currentPage="Differentiation"></Sidebar>
 
   <div class="page-wrapper">
     <!-- TOC -->
@@ -49,7 +49,7 @@ import StepList from '../components/StepsElement.astro';
     <main class="main-content">
       <div class="Spacer"></div>
       <HorSection2
-        title="Slope of a Tangent Line"
+        title="Differentiation"
         id="Title_Derivative"
         direction="left"
         fontsize1="4rem"
@@ -84,7 +84,7 @@ import StepList from '../components/StepsElement.astro';
       &nbsp;&nbsp;A derivative measures the <strong>rate of change</strong> of a function with respect to a variable.<br>
       &nbsp;&nbsp;In simpler words: It tells us how <strong>fast something is changing</strong> at a specific point.<br><br>
 
-
+        <div id ="Derivative_Concept" ></div>
         <Accordion
         title="Concept Explanation"
         id="ConceptExplanation"
@@ -103,6 +103,7 @@ import StepList from '../components/StepsElement.astro';
         &nbsp;&nbsp;&nbsp;&nbsp;• Velocity → derivative = Acceleration<br><br>
         </Accordion>
 
+        <div id ="Derivative_Visual" ></div>
         <Accordion
         title="Visual Explanation"
         id="VisualExplanation"
@@ -183,7 +184,7 @@ import StepList from '../components/StepsElement.astro';
 <strong>Equation:</strong> (c·f)' = c·f'<br><br>
 
         </Accordion>
-
+        
         <Accordion
         title="E. Product Rule: (Click to View)"
         id="E. Product Rule"
@@ -192,26 +193,27 @@ import StepList from '../components/StepsElement.astro';
         fontsize1="2rem"
         fontsize2="1.5rem"
         >
-        &nbsp;&nbsp;Concept: When two functions multiply, both are changing.<br>
-        &nbsp;&nbsp;Equation: <strong>d/dx [f(x)·g(x)] = f'(x)·g(x) + f(x)·g'(x)</strong><br><br>
+        
+&nbsp;&nbsp;Concept: When two functions multiply, both are changing.<br>
+&nbsp;&nbsp;Equation: <strong>(uv)' = uv' + vu'</strong><br><br>
 
         </Accordion>
 
         <Accordion
-        title="F. Quotient Rule"
+        title="F. Quotient Rule: (Click to View)"
         id="F. Quotient Rule"
         direction="left"
         justifycontent="flex-start"
         fontsize1="2rem"
         fontsize2="1.5rem"
         >
-        &nbsp;&nbsp;Concept: When dividing two changing functions, the numerator and denominator both affect the rate.<br>
-      &nbsp;&nbsp;Equation: <strong>d/dx [f(x)/g(x)] = [f'(x)·g(x) − f(x)·g'(x)] / [g(x)]²</strong><br><br>
+        &nbsp;&nbsp;Concept: When dividing two changing functions, both the numerator and denominator affect the rate of change.<br>
+&nbsp;&nbsp;Equation: <strong>(u/v)' = (vu' − uv') / v²</strong><br><br>
 
         </Accordion>
 
         <Accordion
-        title="G. Chain Rule"
+        title="G. Chain Rule: (Click to View)"
         id="G. Chain Rule"
         direction="left"
         justifycontent="flex-start"
@@ -224,6 +226,100 @@ import StepList from '../components/StepsElement.astro';
     &nbsp;&nbsp;&nbsp;&nbsp;Inner function: 3x + 1<br>
     &nbsp;&nbsp;Equation: <strong>d/dx [f(g(x))] = f'(g(x))·g'(x)</strong>
 
+        </Accordion>
+
+      </HorSection2>
+
+      <HorSection2
+        title="What is a Derivative?"
+        id="Derivative_Definition"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+        <strong>Definition:</strong><br>
+      &nbsp;&nbsp;A derivative measures the <strong>rate of change</strong> of a function with respect to a variable.<br>
+      &nbsp;&nbsp;In simpler words: It tells us how <strong>fast something is changing</strong> at a specific point.<br><br>
+
+
+        <Accordion
+        title="Concept Explanation"
+        id="ConceptExplanation"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        <strong>Concept Explanation:</strong><br>
+        &nbsp;&nbsp;Imagine a car moving on a road. The position of the car depends on time.<br>
+        &nbsp;&nbsp;If we ask: <strong>“How fast is the car moving at exactly 5 seconds?”</strong><br>
+        &nbsp;&nbsp;That <strong>instant speed</strong> is the derivative.<br><br>
+
+        &nbsp;&nbsp;So:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;• Position → derivative = Velocity<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;• Velocity → derivative = Acceleration<br><br>
+        </Accordion>
+
+        <Accordion
+        title="Visual Explanation"
+        id="VisualExplanation"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        <strong>Visual Concept:</strong><br>
+        &nbsp;&nbsp;The derivative is the <strong>slope of the tangent line</strong> to a curve at a specific point.<br>
+        &nbsp;&nbsp;• Secant line → average change<br>
+        &nbsp;&nbsp;• Tangent line → instantaneous change<br>
+        &nbsp;&nbsp;As two points get closer together, the secant line becomes the tangent line.<br>
+        &nbsp;&nbsp;That <strong>limiting process</strong> is what defines a derivative.
+        </Accordion>
+      </HorSection2>
+
+      <HorSection2
+        title="Examples"
+        id="Derivative_Examples"
+        direction="left"
+        fontsize1="4rem"
+        fontsize2="2rem"
+        justifycontent="flex-start"
+        width="100%"
+      >
+        ll derivative rules are based on <strong>one key idea</strong>:<br>
+    &nbsp;&nbsp;How does a <strong>small change in x</strong> affect the function?<br><br>
+
+    &nbsp;&nbsp;If:<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;• The function <strong>increases</strong> → the derivative is <strong>positive</strong>.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;• The function <strong>decreases</strong> → the derivative is <strong>negative</strong>.<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;• The function is <strong>flat</strong> → the derivative is <strong>zero</strong>.<br><br>
+
+        <Accordion
+        title="Real-Life Applications"
+        id="DE_IRL"
+        direction="left"
+        justifycontent="flex-start"
+        fontsize1="2rem"
+        fontsize2="1.5rem"
+        >
+        Derivatives are used in many real-world fields:<br><br>
+
+    <strong>Economics:</strong><br>
+    &nbsp;&nbsp;Used to analyze <strong>marginal cost</strong> and <strong>profit maximization</strong>.<br><br>
+
+    <strong>Physics:</strong><br>
+    &nbsp;&nbsp;Used to find <strong>velocity</strong> and <strong>acceleration</strong> from position functions.<br><br>
+
+    <strong>Engineering:</strong><br>
+    &nbsp;&nbsp;Used in <strong>optimization problems</strong> such as designing efficient systems or structures.<br><br>
+
+    <strong>Biology:</strong><br>
+    &nbsp;&nbsp;Used to model <strong>population growth rates</strong> and changes in ecosystems.<br><br>
+
+    <strong>Machine Learning:</strong><br>
+    &nbsp;&nbsp;Used in algorithms like <strong>gradient descent</strong> to minimize errors in models.<br><br>
         </Accordion>
 
       </HorSection2>
